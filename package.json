@@ -1,9 +1,9 @@
 {
-  "name": "typescript-nextjs-starter",
-  "description": "A TypeScript starter for Next.js that includes all you need to build amazing projects",
+  "name": "Winemate",
+  "description": "",
   "version": "1.0.0",
   "private": true,
-  "author": "João Pedro Schmitz <oi@joaopedro.cc> (joaopedro.cc)",
+  "author": "",
   "license": "MIT",
   "keywords": [
     "nextjs",
@@ -32,9 +32,12 @@
     ]
   },
   "dependencies": {
+    "autoprefixer": "10.2.4",
     "next": "10.0.6",
+    "postcss": "8.2.6",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "tailwindcss": "2.0.3"
   },
   "devDependencies": {
     "@commitlint/cli": "11.0.0",

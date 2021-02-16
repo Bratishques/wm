@@ -1,15 +1,13 @@
-
 interface Props {
-  header?: string
+  header?: string;
 }
 
-
-const Messengers = ({header}:Props) => {
+const Messengers = ({ header }: Props) => {
   return (
     <div
       className={`flex flex-col bg-white w-full justify-center items-center py-4 px-6 shadow-messenger rounded-r-20px md:max-w-375px`}
     >
-      {header ? <h2>{header}</h2>: null}
+      {header ? <h2>{header}</h2> : null}
       <div
         className={`w-full flex items-stretch text-caption font-medium justify-between`}
       >

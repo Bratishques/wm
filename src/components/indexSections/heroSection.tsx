@@ -1,5 +1,4 @@
 import Messengers from '../messengers';
-import MobileMessengers from '../mobileMessengers';
 
 const HeroSection = () => {
   const srcSet = `

@@ -12,7 +12,9 @@ const Investment = () => {
           <div className={`lg:col-span-9`}>
             <h1 className={`mb-12`}>Инвестору</h1>
             <h2>Цель и путь</h2>
-            <div className={`md:grid md:grid-cols-9 md:gap-5 flex flex-col-reverse`}>
+            <div
+              className={`md:grid md:grid-cols-9 md:gap-5 flex flex-col-reverse`}
+            >
               <div className={`md:col-span-6 text-regular `}>
                 <p>
                   {' '}
@@ -57,10 +59,11 @@ const Investment = () => {
             </div>
 
             <div className={`mt-12`}>
-            <h2>Что такое «Здоров с вином»?</h2>
-              <div className={`md:grid md:grid-cols-9 md:gap-5 flex flex-col-reverse`}>
+              <h2>Что такое «Здоров с вином»?</h2>
+              <div
+                className={`md:grid md:grid-cols-9 md:gap-5 flex flex-col-reverse`}
+              >
                 <div className={`col-span-6 `}>
- 
                   <p>
                     «Здоров с вином» — международародное лайфстайл-шоу о вине.
                     Выходит каждую среду на русском и английском языках на медиа

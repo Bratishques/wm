@@ -17,7 +17,7 @@ const Question = ({ question, children }: Question) => {
           className={`min-w-max`}
           onClick={() => {
             setIsOpen(!isOpen);
-            console.log(questionRef.current.scrollHeight)
+            console.log(questionRef.current.scrollHeight);
           }}
         >
           <img
@@ -31,14 +31,20 @@ const Question = ({ question, children }: Question) => {
       </div>
       <div
         className={`w-full transition-all duration-700 overflow-hidden`}
-
         style={{
-          maxHeight: !isOpen ? "0" : questionRef.current.scrollHeight
+          maxHeight: !isOpen ? '0' : questionRef.current.scrollHeight,
         }}
       >
-        <div ref={questionRef} className={`font-medium pt-3 md:pt-4`}>{children}</div>
+        <div ref={questionRef} className={`font-medium pt-3 md:pt-4`}>
+          {children}
+        </div>
       </div>
-      <div className={`h-1 mt-4 bg-pastel-wine w-full`}></div>
+      <div
+        className={`mt-4 bg-pastel-wine w-full`}
+        style={{
+          height: 1,
+        }}
+      ></div>
     </div>
   );
 };

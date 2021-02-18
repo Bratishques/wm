@@ -27,8 +27,8 @@ const HeroSection = () => {
             <br />
             мессенджере
           </h1>
-          <div className={`absolute block sm:hidden w-full`}>
-            <Messengers />
+          <div className={`fixed z-20 bottom-0 block sm:hidden w-full`}>
+            <Messengers className={`rounded-t-30px`} />
           </div>
           <p className={`text-lead mb-4 px-9 sm:px-0`}>
             Winemate — это бесплатный сервис рекомендации вин. Где бы вы ни

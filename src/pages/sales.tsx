@@ -14,6 +14,14 @@ const Sales = () => {
             <div className={`md:grid md:grid-cols-9 md:gap-5 flex flex-col`}>
               <div className={`md:col-span-6 text-regular `}>
                 <h1 className={`mb-12`}>Виноделу и продавцу</h1>
+                <div
+                  className={`-ml-7 fixed z-20 bottom-0 block sm:hidden w-full`}
+                >
+                  <Messengers
+                    header={`Свяжитесь с нами`}
+                    className={`rounded-t-30px`}
+                  />
+                </div>
                 <div className={``}>
                   <h2 className={`mb-6`}>Увеличиваем продажи вина</h2>
                   <p className={`text-lead`}>
@@ -21,9 +29,6 @@ const Sales = () => {
                     Winemate анализирует пожелания своих пользователей и
                     отвечает на два вопроса — какое вино и у кого купить
                   </p>
-                </div>
-                <div className={`absolute block sm:hidden w-full -ml-7`}>
-                  <Messengers />
                 </div>
                 <div
                   className={`col-span-3 mb-7 md:mb-0 flex flex-col items-center md:hidden block mt-12`}
@@ -55,7 +60,10 @@ const Sales = () => {
                       <p className={`text-regular`}>Производителям вина</p>
                     </ListMark>
                     <div className={`sm:block hidden mt-16`}>
-                      <Messengers header={`Свяжитесь с нами`} />
+                      <Messengers
+                        className={`rounded-30px`}
+                        header={`Свяжитесь с нами`}
+                      />
                     </div>
                   </div>
                 </div>

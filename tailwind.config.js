@@ -2,10 +2,14 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    letterSpacing:{
+      "widest": ".15em"
+    },
     extend: {
       boxShadow:{
         "messenger": "0px -2px 20px rgba(163, 25, 91, 0.1);"
       },
+      
       colors:{
         "chat-bg": "#F1F5F1",
         "chat-message-bg": "#F6F6F6",
@@ -26,7 +30,8 @@ module.exports = {
         5.5: "1.375rem",
         "30px": "30px",
         "10px": "10px",
-        "450px" : "450px"
+        "450px" : "450px",
+        "260px": "260px"
       },
       minHeight:{
         "450px" : "450px"

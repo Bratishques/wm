@@ -32,9 +32,7 @@ const StepsSection = () => {
           <div>
             <Step text={steps[0].text} number={steps[0].number} />
           </div>
-          <div
-            className={`mt-8 md:ml-0 -ml-7 md:pl-10 absolute block md:relative w-full`}
-          >
+          <div className={`mt-8 md:ml-0 md:pl-10 relative w-full`}>
             <Messengers />
           </div>
         </div>
@@ -54,7 +52,7 @@ const StepsSection = () => {
                   </span>
                 </div>
                 <div
-                  className={`bg-chat-message-bg font-medium  px-5 py-4 text-chat-message rounded-t-30px rounded-bl-30px rounded-br-30px`}
+                  className={`bg-chat-message-bg font-medium  px-5 py-4 text-chat-message rounded-t-30px rounded-bl-30px rounded-br-30px w-260px`}
                 >
                   <div className={`flex mb-2`}>
                     <img src="/images/chat/preview.png" alt="" />
@@ -92,7 +90,7 @@ const StepsSection = () => {
                   </span>
                 </div>
                 <div
-                  className={`bg-wine px-5 py-4 text-chat-message text-white font-medium rounded-t-30px rounded-br-30px rounded-bl-30px`}
+                  className={`bg-wine px-5 py-4 text-chat-message text-white font-medium rounded-t-30px rounded-br-30px rounded-bl-30px w-260px`}
                 >
                   <p>
                     Попробуйте Бордоский бленд от Шато Ла Фавьер. Есть в винном

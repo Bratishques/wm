@@ -7,6 +7,7 @@ const Sommelier = () => {
   return (
     <Layout>
       <Recommendations />
+
       <section className={`mt-20`}>
         <div className={`px-7 w-full mx-auto lg:w-8/12`}>
           <h1>Сомелье</h1>
@@ -14,6 +15,12 @@ const Sommelier = () => {
             Приглашаем на работу в Winemate — международный онлайн-сервис,
             который помогает найти и купить идеальное вино
           </p>
+          <div className={`-ml-7 fixed z-20 bottom-0 block sm:hidden w-full`}>
+            <Messengers
+              header={`Присылайте резюме`}
+              className={`rounded-t-30px`}
+            />
+          </div>
           <div className={`grid grid-cols-2 gap-5 mt-6`}>
             <div>
               <div className={`mb-3 w-full h-1 bg-wine`}></div>
@@ -59,8 +66,11 @@ const Sommelier = () => {
               </ListMark>
             </div>
           </div>
-          <div className={`mt-12`}>
-            <Messengers header={`Присылайте резюме`} />
+          <div className={`mt-12 hidden sm:block`}>
+            <Messengers
+              className={`rounded-30px`}
+              header={`Присылайте резюме`}
+            />
           </div>
         </div>
       </section>

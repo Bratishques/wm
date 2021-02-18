@@ -6,7 +6,7 @@ const HeroSection = () => {
                 /images/hero-image-desktop.png 1024w
                 `;
   return (
-    <section className={`sm:mt-25`}>
+    <section className={`md:mt-25`}>
       <div
         className={`relative w-full sm:px-7 flex flex-col sm:flex-row-reverse`}
       >

@@ -30,7 +30,7 @@ const Cases = () => {
         <div
           className={`w-full md:w-1/2 flex items-end text-white px-7 py-9 md:py-23 md:px-14`}
           style={{
-            backgroundSize: '100% 100%',
+            backgroundSize: "100%",
             background:
               'linear-gradient(180.04deg, rgba(0, 0, 0, 0) 0.04%, rgba(0, 0, 0, 0.7) 67.17%), url(/images/case-two-desktop.png)',
             minHeight: '600px',

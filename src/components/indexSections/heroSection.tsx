@@ -35,8 +35,8 @@ const HeroSection = () => {
             находились — напишете сомелье и он быстро ответит: какое вино и где
             купить
           </p>
-          <div className={`sm:block hidden -ml-7`}>
-            <Messengers />
+          <div className={`sm:block hidden fixed -ml-7`}>
+            <Messengers className={`rounded-r-30px`}/>
           </div>
         </div>
       </div>

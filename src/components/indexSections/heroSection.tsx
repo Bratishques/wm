@@ -12,7 +12,7 @@ const HeroSection = () => {
       >
         <div className={`w-full sm:w-1/2 lg:w-7/12 mb-6 md:mb-0`}>
           <img
-            className={`w-full lg:hidden`}
+            className={`w-full mt-16 md:mt-0 lg:hidden`}
             src="/images/hero-image-mobile.png"
             alt=""
           />
@@ -27,7 +27,7 @@ const HeroSection = () => {
             <br />
             мессенджере
           </h1>
-          <div className={`fixed z-20 bottom-0 block sm:hidden w-full`}>
+          <div className={`fixed z-50 bottom-0 block sm:hidden w-full`}>
             <Messengers className={`rounded-t-30px`} />
           </div>
           <p className={`text-lead mb-4 px-9 sm:px-0`}>
@@ -35,8 +35,8 @@ const HeroSection = () => {
             находились — напишете сомелье и он быстро ответит: какое вино и где
             купить
           </p>
-          <div className={`sm:block hidden fixed -ml-7`}>
-            <Messengers className={`rounded-r-30px`}/>
+          <div className={`sm:block z-50 hidden fixed bottom-0  -ml-7`}>
+            <Messengers className={`rounded-r-30px`} />
           </div>
         </div>
       </div>

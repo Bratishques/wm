@@ -31,7 +31,6 @@ const SidebarContextProvider = ({ children }) => {
     const sidebar = document.getElementById(
       'sidebar-container',
     ) as HTMLDivElement;
-    console.log(window.scrollY);
     if (!sidebarOpen) {
       //layout.style.marginTop = -window.scrollY + "px"
       //sidebar.style.top = window.scrollY + "px"

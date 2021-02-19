@@ -3,14 +3,14 @@ import { useContext } from 'react';
 import Link from 'next/link';
 
 const Sidebar = () => {
-  const context = useContext(SidebarContext);
+  const { sidebarOpen, setSidebarOpen } = useContext(SidebarContext);
 
   return (
     <div
       id={`sidebar-container`}
-      className={`min-h-screen flex flex-col fixed z-30 bg-white w-full px-5 pt-12 md:pt-16 sm:w-auto transition-all duration-300 md:duration-500 pb-8`}
+      className={`min-h-screen flex flex-col fixed right-0 z-30 bg-white w-full px-5 pt-12 md:pt-16 sm:w-auto transition-all duration-300 md:duration-500 pb-8`}
       style={{
-        marginLeft: context.sidebarOpen ? '0%' : '-100%',
+        marginRight: sidebarOpen ? '0%' : '-100%',
       }}
     >
       <div className={`flex justify-between items-start`}>
@@ -21,7 +21,7 @@ const Sidebar = () => {
             рекомендации <br /> от сомелье
           </p>
         </div>
-        <button className={`ml-12`} onClick={context.setSidebarOpen}>
+        <button className={`ml-12`} onClick={setSidebarOpen}>
           <img src="/icons/cross-icon.svg" alt="" />
         </button>
       </div>
@@ -32,12 +32,12 @@ const Sidebar = () => {
           компания
         </p>
         <Link href={`/how-it-works`}>
-          <p className={`cursor-pointer mt-5`} onClick={context.setSidebarOpen}>
+          <p className={`cursor-pointer mt-5`} onClick={setSidebarOpen}>
             Как это работает
           </p>
         </Link>
         <Link href={`/news`}>
-          <p className={`cursor-pointer mt-5`} onClick={context.setSidebarOpen}>
+          <p className={`cursor-pointer mt-5`} onClick={setSidebarOpen}>
             Новости
           </p>
         </Link>
@@ -49,17 +49,17 @@ const Sidebar = () => {
           компания
         </p>
         <Link href={`/how-it-works`}>
-          <p className={`cursor-pointer mt-5`} onClick={context.setSidebarOpen}>
+          <p className={`cursor-pointer mt-5`} onClick={setSidebarOpen}>
             Сомелье
           </p>
         </Link>
         <Link href={`/sales`}>
-          <p className={`cursor-pointer mt-5`} onClick={context.setSidebarOpen}>
+          <p className={`cursor-pointer mt-5`} onClick={setSidebarOpen}>
             Виноделу и продавцу
           </p>
         </Link>
         <Link href={`/investment`}>
-          <p className={`cursor-pointer mt-5`} onClick={context.setSidebarOpen}>
+          <p className={`cursor-pointer mt-5`} onClick={setSidebarOpen}>
             Инвестору
           </p>
         </Link>

@@ -17,7 +17,9 @@ module.exports = {
         "pastel-wine": "#DEC0CF",
         "file-name": "#333333",
         "placeholder-gray": "#BDBDBD",
-        "notice-gray": " #ECF0F3"
+        "notice-gray": " #ECF0F3",
+        "indicator-bg" : "#F2D7E4",
+        "indicator-ball": "#DEA4C0"
       },
       spacing:{
         14: "3.5rem",
@@ -87,7 +89,32 @@ module.exports = {
         "regular": ["18px", {
           lineHeight: "150%",
           fontWeight: "500"
-        }]
+        }],
+      },
+      animation : {
+        "ball-bounce": "ball-bounce 1.5s ease-in-out infinite 0.5s"
+      },
+
+      keyframes: {
+        "ball-bounce" : {
+          "50%,80%,100%": 
+          {
+              transform: "translateY(0)"
+          },
+
+          "20%":{
+            transform: "translateY(2px)"
+          },
+          "40%": {
+              transform: "translateY(-8px)"
+          },
+          "70%" :{
+              transform: "translateY(-5px)"
+          },
+          "90%": {
+              transform: "translateY(-4px)"
+          }
+      }
       }
     },
   },

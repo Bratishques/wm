@@ -29,7 +29,7 @@ export default function News({ news }: Props) {
               return (
                 <Link href={`/news/${article.slug}`}>
                   <div
-                    key={`article${i}`}
+                    key={`article${article.header}`}
                     //Это убожество по другому работать не хочет
                     className={`mt-12 md:mt-0 max-w-375px md:max-w-full w-full bg-fill-full md:bg-fill-full lg:bg-fill-half xl:bg-fill-full py-7 px-9 min-h-450px flex flex-col justify-end cursor-pointer`}
                     style={{

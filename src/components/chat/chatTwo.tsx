@@ -92,7 +92,7 @@ const ChatTwo = () => {
             «Сыр и вино», 8-я Линия, 44
           </p>
         </SommelierMessage>
-        <div className={className}>
+
           <SommelierMessage trigger={triggers[4]}>
             <div>
               Или закажите доставку <br />
@@ -101,7 +101,7 @@ const ChatTwo = () => {
               </a>
             </div>
           </SommelierMessage>
-        </div>
+
         <div className={``}>
           <ChatInput />
         </div>

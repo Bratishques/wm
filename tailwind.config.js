@@ -92,28 +92,24 @@ module.exports = {
         }],
       },
       animation : {
-        "ball-bounce": "ball-bounce 1.5s ease-in-out infinite 0.5s"
+        "ball1-bounce": "ball-bounce 1.2s ease-in-out 0.2s infinite ",
+        "ball2-bounce": "ball-bounce 1.2s ease-in-out 0.4s infinite ",
+        "ball3-bounce": "ball-bounce 1.2s ease-in-out 0.6s infinite "
       },
 
       keyframes: {
         "ball-bounce" : {
-          "50%,80%,100%": 
+          "0%, 100%": 
           {
               transform: "translateY(0)"
           },
 
-          "20%":{
-            transform: "translateY(2px)"
+          "33%":{
+            transform: "translateY(-7px)"
           },
-          "40%": {
-              transform: "translateY(-8px)"
+          "66%" :{
+              transform: "translateY(3px)"
           },
-          "70%" :{
-              transform: "translateY(-5px)"
-          },
-          "90%": {
-              transform: "translateY(-4px)"
-          }
       }
       }
     },

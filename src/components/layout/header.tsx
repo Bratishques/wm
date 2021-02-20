@@ -5,8 +5,8 @@ import LangSwitch from './langSwitch';
 const Header = () => {
   const context = useContext(SidebarContext);
   return (
-    <section className={`bg-white z-20 fixed`}>
-      <div className={`pt-15 md:pt-9 pb-4 px-7 md:pb-4`}>
+    <section className={`bg-white z-20 `}>
+      <div className={`pt-15 z-20 md:pt-9 pb-4 px-7 md:pb-4 w-full top-0 fixed bg-white `}>
         <div className={`flex justify-between`}>
           <div className={`flex items-end`}>
             <img src={'/logo/logo-image.svg'} alt="Winemate" />

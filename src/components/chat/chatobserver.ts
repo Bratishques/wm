@@ -1,6 +1,6 @@
 const chatObserver = (trigger: Function, element: HTMLDivElement) => {
   const options = {
-    rootMargin: '20px',
+    rootMargin: '50px',
     threshold: 1.0,
   };
   const callback = function (entries: IntersectionObserverEntry[]) {

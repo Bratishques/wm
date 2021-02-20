@@ -94,7 +94,8 @@ module.exports = {
       animation : {
         "ball1-bounce": "ball-bounce 1.2s ease-in-out 0.2s infinite ",
         "ball2-bounce": "ball-bounce 1.2s ease-in-out 0.4s infinite ",
-        "ball3-bounce": "ball-bounce 1.2s ease-in-out 0.6s infinite "
+        "ball3-bounce": "ball-bounce 1.2s ease-in-out 0.6s infinite ",
+        "overlay-appear": "overlay-appear 0.4s ease-in-out"
       },
 
       keyframes: {
@@ -110,6 +111,14 @@ module.exports = {
           "66%" :{
               transform: "translateY(3px)"
           },
+      },
+      "overlay-appear": {
+        "0%": {
+          opacity: "0%"
+        },
+        "100%": {
+          opacity: "25%"
+        }
       }
       }
     },

@@ -18,6 +18,27 @@ const SidebarContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    if (localStorage.getItem('ageConfirmed') !== "true") {
+      setModalOpen(true)
+    }
+
+  }, [])
+
+  useEffect(() => {
+    const mainTag = document.querySelector('body') as HTMLBodyElement;
+    if (sidebarOpen || modalOpen) {
+
+      mainTag.style.height = '100vh';
+      mainTag.style.overflow = 'hidden';
+    } else {
+      mainTag.style.height = '';
+      mainTag.style.overflow = '';
+
+    }
+
+  }, [modalOpen, sidebarOpen])
+
+  useEffect(() => {
     window.addEventListener('scroll', scrollListener);
     return () => {
       window.removeEventListener('scroll', scrollListener);
@@ -26,31 +47,12 @@ const SidebarContextProvider = ({ children }) => {
 
   const openSidebar = () => {
     setSidebarOpen(!sidebarOpen);
-    const mainTag = document.querySelector('body') as HTMLBodyElement;
-    const layout = document.getElementById('layout') as HTMLDivElement;
-    const sidebar = document.getElementById(
-      'sidebar-container',
-    ) as HTMLDivElement;
-    if (!sidebarOpen) {
-      //layout.style.marginTop = -window.scrollY + "px"
-      //sidebar.style.top = window.scrollY + "px"
-      //layout.style.maxHeight = sidebar?.scrollHeight + window.scrollY + "px"
-      //layout.style.overflow = "hidden"
-      //window.scrollTo(0,0)
-      mainTag.style.height = '100vh';
-      mainTag.style.overflow = 'hidden';
-    } else {
-      mainTag.style.height = '';
-      mainTag.style.overflow = '';
-      //sidebar.style.top = ""
-      //layout.style.marginTop = ""
-      //layout.style.maxHeight = ""
-      //layout.style.overflow = ""
-    }
+   
   };
 
   const openModal = () => {
     setModalOpen(!modalOpen);
+    localStorage.setItem("ageConfirmed", "true")
   };
   return (
     <SidebarContext.Provider

@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import { ReactNode } from 'react';
+import AgeModal from './ageModal';
 import Footer from './footer';
 import Header from './header';
+import Overlay from './overlay';
 import Sidebar from './sidebar';
 
 interface Childern {
@@ -15,6 +17,8 @@ const Layout = ({ children }: Childern) => {
         <title>Winemate</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <AgeModal/>
+      <Overlay/>
       <Sidebar />
       <Header />
       <div className={`pt-30 md:pt-20`}>

@@ -8,7 +8,7 @@ const Sidebar = () => {
   return (
     <div
       id={`sidebar-container`}
-      className={`min-h-screen flex flex-col fixed right-0 z-30 bg-white w-full px-5 pt-12 md:pt-16 sm:w-auto transition-all duration-300 md:duration-500 pb-8`}
+      className={`min-h-screen flex flex-col fixed right-0 z-40 bg-white w-full px-5 pt-12 md:pt-16 sm:w-auto transition-all duration-300 md:duration-500 pb-8`}
       style={{
         marginRight: sidebarOpen ? '0%' : '-100%',
       }}

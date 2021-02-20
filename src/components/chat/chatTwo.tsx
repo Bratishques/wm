@@ -53,12 +53,12 @@ const ChatTwo = () => {
     <div
       ref={boxRef}
       id={`msg-2`}
-      className={`w-full flex flex-col lg:w-1/2 bg-chat-bg overflow-hidden items-center justify-end py-6`}
+      className={`w-full flex h-screen flex-col lg:w-1/2 bg-chat-bg overflow-hidden items-center justify-end py-6`}
     >
       <div
         className={`w-full ${
           triggered ? 'opacity-100' : 'opacity-50'
-        } transition-all transition-500 flex flex-col pl-8 pr-7 mt-auto`}
+        } transition-all transition-500 flex flex-col pl-8 pr-7 md:mt-auto`}
         style={{
           maxWidth: '375px',
         }}

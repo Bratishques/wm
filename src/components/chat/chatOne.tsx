@@ -53,13 +53,13 @@ const ChatOne = () => {
 
   return (
     <div
-      className={`w-full flex flex-col lg:w-1/2 bg-chat-bg overflow-hidden items-center justify-end py-6`}
+      className={`w-full h-screen flex flex-col lg:w-1/2 bg-chat-bg overflow-hidden items-center justify-end py-6`}
       ref={boxRef}
     >
       <div
         className={`w-full ${
           triggered ? 'opacity-100' : 'opacity-50'
-        } transition-all transition-300 flex flex-col pl-8 pr-7 mt-auto`}
+        } transition-all transition-300 flex flex-col pl-8 pr-7 lg:mt-auto`}
         style={{
           maxWidth: '375px',
         }}

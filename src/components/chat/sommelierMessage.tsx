@@ -18,6 +18,16 @@ function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+function isInViewport(element:HTMLDivElement) {
+  const rect = element.getBoundingClientRect();
+  return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
 const SommelierMessage = ({
   children,
   rounded = false,
@@ -41,6 +51,12 @@ const SommelierMessage = ({
         setIsTyping(false);
         msgRef.current.style.marginTop = '0px';
         msgRef.current.style.height = msgRef.current.scrollHeight + 32 + 'px';
+        if (window.innerWidth <= 768 && isInViewport(msgRef.current)) {
+          console.log(window.scrollY)
+          window.scrollTo(0, window.scrollY + msgRef.current.scrollHeight + 32 + 44)
+          await sleep(500)
+          window.scrollTo(0, window.scrollY + 44)
+        }
       };
 
       asyncAnim();

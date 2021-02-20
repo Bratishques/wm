@@ -3,10 +3,10 @@ import { ReactNode } from 'react';
 interface Props {
   children: ReactNode;
   className?: string;
-  handler?: Function
+  handler?: Function;
 }
 
-const TagButton = ({ children, className, handler=()=>{} }: Props) => {
+const TagButton = ({ children, className, handler = () => {} }: Props) => {
   return (
     <button
       onClick={() => handler()}

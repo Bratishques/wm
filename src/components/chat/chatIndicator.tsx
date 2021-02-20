@@ -10,17 +10,17 @@ function sleep(ms: number) {
 }
 
 const ChatIndicatior = ({ hidden }: Props) => {
-    const ball1 = useRef() as MutableRefObject<HTMLDivElement>
-    const ball2 = useRef() as MutableRefObject<HTMLDivElement>
-    const ball3 = useRef() as MutableRefObject<HTMLDivElement>
+  const ball1 = useRef() as MutableRefObject<HTMLDivElement>;
+  const ball2 = useRef() as MutableRefObject<HTMLDivElement>;
+  const ball3 = useRef() as MutableRefObject<HTMLDivElement>;
   useEffect(() => {
     const asyncAnim = async () => {
-        const balls = [ball1.current, ball2.current, ball3.current]
+      const balls = [ball1.current, ball2.current, ball3.current];
       for (let ball of balls) {
         /*const timeline = gsap.timeline({ repeat: 10, repeatDelay: 0.4 });
         timeline.to(ball, { y: -6, duration: 0.4, ease: '' });
         timeline.to(ball, { y: 0, duration: 0.4, ease: "back.out(4)" }); */
-        ball.classList.add("animate-ball-bounce")
+        ball.classList.add('animate-ball-bounce');
         await sleep(300);
       }
     };
@@ -36,9 +36,18 @@ const ChatIndicatior = ({ hidden }: Props) => {
       <div
         className={`mx-auto my-auto h-2.5 flex justify-between item-center relative`}
       >
-        <div ref={ball1} className={`w-2 h-2 bg-indicator-ball rounded-full animate-ball1-bounce`}/>
-        <div ref={ball2} className={` w-2 h-2 bg-indicator-ball rounded-full animate-ball2-bounce`}/>
-        <div ref={ball3} className={`w-2 h-2 bg-indicator-ball rounded-full animate-ball3-bounce`}/>
+        <div
+          ref={ball1}
+          className={`w-2 h-2 bg-indicator-ball rounded-full animate-ball1-bounce`}
+        />
+        <div
+          ref={ball2}
+          className={` w-2 h-2 bg-indicator-ball rounded-full animate-ball2-bounce`}
+        />
+        <div
+          ref={ball3}
+          className={`w-2 h-2 bg-indicator-ball rounded-full animate-ball3-bounce`}
+        />
       </div>
     </div>
   );

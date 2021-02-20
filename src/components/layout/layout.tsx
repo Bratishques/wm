@@ -17,8 +17,8 @@ const Layout = ({ children }: Childern) => {
         <title>Winemate</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AgeModal/>
-      <Overlay/>
+      <AgeModal />
+      <Overlay />
       <Sidebar />
       <Header />
       <div className={`pt-30 md:pt-20`}>

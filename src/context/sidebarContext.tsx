@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 
 const SidebarContext = React.createContext({
   sidebarOpen: false,
@@ -8,7 +8,11 @@ const SidebarContext = React.createContext({
   scroll: 0,
 });
 
-const SidebarContextProvider = ({ children }) => {
+interface Props {
+  children: ReactNode;
+}
+
+const SidebarContextProvider = ({ children }: Props) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [scroll, setScroll] = useState(0);
@@ -18,25 +22,21 @@ const SidebarContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem('ageConfirmed') !== "true") {
-      setModalOpen(true)
+    if (localStorage.getItem('ageConfirmed') !== 'true') {
+      setModalOpen(true);
     }
-
-  }, [])
+  }, []);
 
   useEffect(() => {
     const mainTag = document.querySelector('body') as HTMLBodyElement;
     if (sidebarOpen || modalOpen) {
-
       mainTag.style.height = '100vh';
       mainTag.style.overflow = 'hidden';
     } else {
       mainTag.style.height = '';
       mainTag.style.overflow = '';
-
     }
-
-  }, [modalOpen, sidebarOpen])
+  }, [modalOpen, sidebarOpen]);
 
   useEffect(() => {
     window.addEventListener('scroll', scrollListener);
@@ -47,12 +47,11 @@ const SidebarContextProvider = ({ children }) => {
 
   const openSidebar = () => {
     setSidebarOpen(!sidebarOpen);
-   
   };
 
   const openModal = () => {
     setModalOpen(!modalOpen);
-    localStorage.setItem("ageConfirmed", "true")
+    localStorage.setItem('ageConfirmed', 'true');
   };
   return (
     <SidebarContext.Provider

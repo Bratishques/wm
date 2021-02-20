@@ -53,7 +53,7 @@ const ChatTwo = () => {
     <div
       ref={boxRef}
       id={`msg-2`}
-      className={`w-full flex h-screen flex-col lg:w-1/2 bg-chat-bg overflow-hidden items-center justify-end py-6`}
+      className={`w-full flex flex-col lg:w-1/2 bg-chat-bg overflow-hidden items-center justify-end py-6`}
     >
       <div
         className={`w-full ${
@@ -93,14 +93,14 @@ const ChatTwo = () => {
           </p>
         </SommelierMessage>
 
-          <SommelierMessage trigger={triggers[4]}>
-            <div>
-              Или закажите доставку <br />
-              <a href="" className={`underline`}>
-                https://wineshop.ru/shato-la-favier
-              </a>
-            </div>
-          </SommelierMessage>
+        <SommelierMessage trigger={triggers[4]}>
+          <div>
+            Или закажите доставку <br />
+            <a href="" className={`underline`}>
+              https://wineshop.ru/shato-la-favier
+            </a>
+          </div>
+        </SommelierMessage>
 
         <div className={``}>
           <ChatInput />

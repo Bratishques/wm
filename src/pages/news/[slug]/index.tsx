@@ -101,7 +101,7 @@ const news: newsArticle[] = [
   },
 ];
 
-export const getStaticProps: GetStaticProps = async ({ params } ) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   console.log(params);
   const article = news[Number(params.slug) - 1];
   console.log(article);

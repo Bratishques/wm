@@ -8,9 +8,7 @@ const AgeModal = () => {
     <div
       className={`z-50 fixed w-full h-full bg-transparent flex justify-center items-end md:items-center ${
         modalOpen ? '' : 'hidden'
-      }`
-    
-    }
+      }`}
     >
       <div
         style={{

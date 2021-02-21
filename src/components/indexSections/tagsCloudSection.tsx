@@ -10,9 +10,7 @@ const TagsCloudSection = () => {
         <h2 className={`hidden md:block text-center`}>
           Наши сомелье работают со всеми <br /> возможными пожеланиями
         </h2>
-        <div
-          className={`overflow-hidden w-full flex justify-center`}
-        >
+        <div className={`overflow-hidden w-full flex justify-center`}>
           <TagsCloud />
         </div>
       </div>

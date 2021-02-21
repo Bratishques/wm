@@ -25,14 +25,13 @@ const SidebarContextProvider = ({ children }: Props) => {
     const appHeight = () => {
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
-  }
-      window.addEventListener('resize', appHeight)
-      appHeight()
-      return () => {
-        window.removeEventListener('resize', appHeight)
-      }
-
-  }, [])
+    };
+    window.addEventListener('resize', appHeight);
+    appHeight();
+    return () => {
+      window.removeEventListener('resize', appHeight);
+    };
+  }, []);
 
   useEffect(() => {
     if (localStorage.getItem('ageConfirmed') !== 'true') {

@@ -11,21 +11,23 @@ export default function NewsArticle({ article }: Props) {
           <h1>{article && article.header}</h1>
           <img
             className={`max-h-450px w-full object-cover`}
-            src={`${article &&  article.image}`}
+            src={`${article && article.image}`}
             alt=""
           />
         </div>
         <div
           className={`px-8 mt-3 py-12 block sm:hidden h-screen flex flex-col justify-end`}
           style={{
-            background: `linear-gradient(180.06deg, rgba(0, 0, 0, 0) 50.08%, #000000 99.95%), url(${article && article.image})`,
+            background: `linear-gradient(180.06deg, rgba(0, 0, 0, 0) 50.08%, #000000 99.95%), url(${
+              article && article.image
+            })`,
             backgroundSize: `cover`,
             backgroundPosition: `center`,
           }}
         >
-          <h1 className={`text-white`}>{article &&  article.header}</h1>
+          <h1 className={`text-white`}>{article && article.header}</h1>
           <div className={`text-notice-gray text-chat-name`}>
-            {article &&  article.date}
+            {article && article.date}
           </div>
         </div>
         <div
@@ -77,10 +79,6 @@ export interface Props {
   article: newsArticle;
 }
 
-
-
-
-
 export async function getStaticPaths() {
   const news = [
     {
@@ -112,14 +110,16 @@ export async function getStaticPaths() {
       },
     };
   });
-  console.log(paths)
+  console.log(paths);
   return {
     paths: paths,
     fallback: true,
   };
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsContext) => {
+export const getStaticProps: GetStaticProps = async ({
+  params,
+}: GetStaticPropsContext) => {
   const news = [
     {
       header: 'Мы открываемся в Грузии',
@@ -143,14 +143,11 @@ export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsC
       date: '23.10.2020',
     },
   ];
-    const article = news[Number(params?.slug) - 1];
-      console.log(article)
-      return {
-         props: {
-            article: article,
-      }, 
-
-  }
-
-  
+  const article = news[Number(params?.slug) - 1];
+  console.log(article);
+  return {
+    props: {
+      article: article,
+    },
+  };
 };

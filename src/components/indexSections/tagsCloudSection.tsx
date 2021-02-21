@@ -11,7 +11,7 @@ const TagsCloudSection = () => {
           Наши сомелье работают со всеми <br /> возможными пожеланиями
         </h2>
         <div
-          className={`overflow-x-scroll lg:overflow-hidden w-full lg:flex justify-center`}
+          className={`overflow-hidden w-full flex justify-center`}
         >
           <TagsCloud />
         </div>

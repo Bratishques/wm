@@ -14,13 +14,16 @@ const Sidebar = () => {
       }}
     >
       <div className={`flex justify-between items-start`}>
-        <div className={`flex`}>
+        <Link href={"/"}>
+        <div 
+        className={`flex cursor-pointer`}>
           <img className={`w-14 h-14`} src="/images/invest-logo.svg" alt="" />
           <p className={`pl-7 -mt-1 font-semibold`}>
             Бесплатные <br />
             рекомендации <br /> от сомелье
           </p>
         </div>
+        </Link>
         <button className={`ml-12`} onClick={setSidebarOpen}>
           <img src="/icons/cross-icon.svg" alt="" />
         </button>
@@ -48,7 +51,7 @@ const Sidebar = () => {
         >
           компания
         </p>
-        <Link href={`/how-it-works`}>
+        <Link href={`/sommelier`}>
           <p className={`cursor-pointer mt-5`} onClick={setSidebarOpen}>
             Сомелье
           </p>

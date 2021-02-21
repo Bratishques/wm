@@ -4,6 +4,15 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+html {
+  height: -webkit-fill-available;
+  height: -moz-available;          /* WebKit игнор. */
+  height: fill-available;
+}
 
 html,
 body {

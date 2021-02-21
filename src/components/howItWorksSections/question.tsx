@@ -11,15 +11,15 @@ const Question = ({ question, children }: Question) => {
 
   return (
     <div className={`w-full mb-6`}>
-      <div className={`flex justify-between items-center`}>
+      <div
+        onClick={() => {
+          setIsOpen(!isOpen);
+          console.log(questionRef.current.scrollHeight);
+        }}
+        className={`flex justify-between items-center cursor-pointer`}
+      >
         <p className={`text-lead pr-4`}>{question}</p>
-        <button
-          className={`min-w-max`}
-          onClick={() => {
-            setIsOpen(!isOpen);
-            console.log(questionRef.current.scrollHeight);
-          }}
-        >
+        <button className={`min-w-max`}>
           <img
             className={`w-full text-regular ${
               isOpen ? 'rotate-45' : ''

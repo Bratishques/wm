@@ -6,7 +6,7 @@ const Overlay = () => {
 
   return (
     <div
-      className={`w-full top-0 h-screen bg-black fixed z-30 opacity-25 ${
+      className={`w-full top-0 h-full bg-black fixed z-30 opacity-25 ${
         sidebarOpen || modalOpen ? '' : 'hidden'
       } animate-overlay-appear`}
     ></div>

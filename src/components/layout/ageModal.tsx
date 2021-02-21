@@ -6,9 +6,11 @@ const AgeModal = () => {
   const { modalOpen, setModalOpen } = useContext(SidebarContext);
   return (
     <div
-      className={`z-50 fixed w-full bg-transparent h-screen flex justify-center items-end md:items-center ${
+      className={`z-50 fixed w-full h-full bg-transparent flex justify-center items-end md:items-center ${
         modalOpen ? '' : 'hidden'
-      }`}
+      }`
+    
+    }
     >
       <div
         style={{

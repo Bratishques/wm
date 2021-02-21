@@ -1,6 +1,6 @@
 import Layout from '@/components/layout/layout';
 import Recommendations from '@/components/recommendations';
-import { GetStaticProps, GetStaticPaths } from 'next';
+import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from 'next';
 
 export default function NewsArticle({ article }: Props) {
   return (
@@ -8,24 +8,24 @@ export default function NewsArticle({ article }: Props) {
       <Recommendations />
       <section className={`sm:mt-20 sm:px-9`}>
         <div className={`lg:w-8/12 mx-auto hidden sm:block w-full`}>
-          <h1>{article.header}</h1>
+          <h1>{article && article.header}</h1>
           <img
             className={`max-h-450px w-full object-cover`}
-            src={`${article.image}`}
+            src={`${article &&  article.image}`}
             alt=""
           />
         </div>
         <div
           className={`px-8 mt-3 py-12 block sm:hidden h-screen flex flex-col justify-end`}
           style={{
-            background: `linear-gradient(180.06deg, rgba(0, 0, 0, 0) 50.08%, #000000 99.95%), url(${article.image})`,
+            background: `linear-gradient(180.06deg, rgba(0, 0, 0, 0) 50.08%, #000000 99.95%), url(${article && article.image})`,
             backgroundSize: `cover`,
             backgroundPosition: `center`,
           }}
         >
-          <h1 className={`text-white`}>{article.header}</h1>
+          <h1 className={`text-white`}>{article &&  article.header}</h1>
           <div className={`text-notice-gray text-chat-name`}>
-            {article.date}
+            {article &&  article.date}
           </div>
         </div>
         <div
@@ -82,7 +82,7 @@ export interface Props {
 
 
 export async function getStaticPaths() {
-  const news: newsArticle[] = [
+  const news = [
     {
       header: 'Мы открываемся в Грузии',
       image: '/images/news/detail-1.png',
@@ -112,15 +112,15 @@ export async function getStaticPaths() {
       },
     };
   });
+  console.log(paths)
   return {
     paths: paths,
     fallback: true,
   };
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log(params);
-  const news: newsArticle[] = [
+export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsContext) => {
+  const news = [
     {
       header: 'Мы открываемся в Грузии',
       image: '/images/news/detail-1.png',
@@ -143,12 +143,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       date: '23.10.2020',
     },
   ];
+    const article = news[Number(params?.slug) - 1];
+      console.log(article)
+      return {
+         props: {
+            article: article,
+      }, 
+
+  }
+
   
-  const article = news[Number(params?.slug) - 1];
-  console.log(article);
-  return {
-    props: {
-      article: article,
-    }, 
-  };
 };

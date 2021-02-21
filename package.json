@@ -5,11 +5,7 @@
   "private": true,
   "author": "",
   "license": "MIT",
-  "keywords": [
-    "nextjs",
-    "starter",
-    "typescript"
-  ],
+  "keywords": [],
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -31,6 +27,7 @@
     "gsap": "3.6.0",
     "next": "10.0.6",
     "postcss": "8.2.6",
+    "postcss-preset-env": "6.7.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "tailwindcss": "2.0.3"

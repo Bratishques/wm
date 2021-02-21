@@ -1,6 +1,6 @@
 import Layout from '@/components/layout/layout';
 import Recommendations from '@/components/recommendations';
-import { GetStaticProps } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next';
 
 export default function NewsArticle({ article }: Props) {
   return (
@@ -79,39 +79,7 @@ export interface Props {
 
 
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log(params);
-  const news: newsArticle[] = [
-    {
-      header: 'Мы открываемся в Грузии',
-      image: '/images/news/detail-1.png',
-      slug: '1',
-      content: 'Hello world',
-      date: '23.10.2020',
-    },
-    {
-      header: '1000 сомелье присоединились к нам в 2020',
-      image: '/images/news/2.png',
-      slug: '2',
-      content: 'Hello world',
-      date: '23.10.2020',
-    },
-    {
-      header: 'Мы добавили месседжер WhatsApp',
-      image: '/images/news/3.png',
-      slug: '3',
-      content: 'Hello world',
-      date: '23.10.2020',
-    },
-  ];
-  const article = news[Number(params?.slug) - 1];
-  console.log(article);
-  return {
-    props: {
-      article: article,
-    }, 
-  };
-};
+
 
 export async function getStaticPaths() {
   const news: newsArticle[] = [
@@ -149,3 +117,38 @@ export async function getStaticPaths() {
     fallback: true,
   };
 }
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  console.log(params);
+  const news: newsArticle[] = [
+    {
+      header: 'Мы открываемся в Грузии',
+      image: '/images/news/detail-1.png',
+      slug: '1',
+      content: 'Hello world',
+      date: '23.10.2020',
+    },
+    {
+      header: '1000 сомелье присоединились к нам в 2020',
+      image: '/images/news/2.png',
+      slug: '2',
+      content: 'Hello world',
+      date: '23.10.2020',
+    },
+    {
+      header: 'Мы добавили месседжер WhatsApp',
+      image: '/images/news/3.png',
+      slug: '3',
+      content: 'Hello world',
+      date: '23.10.2020',
+    },
+  ];
+  
+  const article = news[Number(params?.slug) - 1];
+  console.log(article);
+  return {
+    props: {
+      article: article,
+    }, 
+  };
+};

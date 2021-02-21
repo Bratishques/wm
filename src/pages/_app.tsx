@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app';
+
 import '@/styles/global.css';
 import { SidebarContextProvider } from '@/context/sidebarContext';
 

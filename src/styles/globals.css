@@ -3,7 +3,6 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
 :root {
-  --app-height: 100%;
 }
 
 
@@ -12,7 +11,7 @@ body {
     padding: 0;
     margin: 0;
     height: 100vh;
-    height: var(--app-height);
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 html,

@@ -22,6 +22,19 @@ const SidebarContextProvider = ({ children }: Props) => {
   };
 
   useEffect(() => {
+    const appHeight = () => {
+      const doc = document.documentElement
+      doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+  }
+      window.addEventListener('resize', appHeight)
+      appHeight()
+      return () => {
+        window.removeEventListener('resize', appHeight)
+      }
+
+  }, [])
+
+  useEffect(() => {
     if (localStorage.getItem('ageConfirmed') !== 'true') {
       setModalOpen(true);
     }
@@ -30,10 +43,10 @@ const SidebarContextProvider = ({ children }: Props) => {
   useEffect(() => {
     const mainTag = document.querySelector('body') as HTMLBodyElement;
     if (sidebarOpen || modalOpen) {
-      mainTag.style.height = '100vh';
+      mainTag.style.maxHeight = 'fill-available';
       mainTag.style.overflow = 'hidden';
     } else {
-      mainTag.style.height = '';
+      mainTag.style.maxHeight = '';
       mainTag.style.overflow = '';
     }
   }, [modalOpen, sidebarOpen]);

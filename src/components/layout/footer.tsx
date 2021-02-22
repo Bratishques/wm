@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <section className={`mt-36`}>
+    <section className={`pt-36 bg-white`} data-scroll-section>
       <div className={`md:px-8 px-12`}>
         <div className={`w-full md:flex md:flex-row md:justify-between mb-11`}>
           <img

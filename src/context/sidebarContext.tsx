@@ -18,6 +18,7 @@ const SidebarContextProvider = ({ children }: Props) => {
   const [scroll, setScroll] = useState(0);
 
   const scrollListener = () => {
+    console.log(window.scrollY)
     setScroll(window.scrollY);
   };
 
@@ -52,6 +53,8 @@ const SidebarContextProvider = ({ children }: Props) => {
 
   useEffect(() => {
     window.addEventListener('scroll', scrollListener);
+    setScroll(window.scrollY);
+
     return () => {
       window.removeEventListener('scroll', scrollListener);
     };

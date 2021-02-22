@@ -22,7 +22,9 @@ const ChatTwo = () => {
   const className = 'msg-2 z-0';
   const [triggered, setTriggered] = useState(false);
   const [triggers, setTriggers] = useState([false, false, false, false, false]);
-
+  useEffect(() => {
+    boxRef.current.scrollTo({behavior:"smooth", top: boxRef.current.scrollHeight, left: 0})
+  },[triggers])
   const boxRef = useRef() as MutableRefObject<HTMLDivElement>;
 
   useEffect(() => {
@@ -53,12 +55,12 @@ const ChatTwo = () => {
     <div
       ref={boxRef}
       id={`msg-2`}
-      className={`w-full flex flex-col lg:w-1/2 bg-chat-bg overflow-hidden items-center justify-end py-6`}
+      className={`w-full flex flex-col lg:w-1/2 bg-chat-bg py-6 justify-end overflow-hidden lg:h-auto h-screen max-h-minus-header-mobile`}
     >
       <div
-        className={`w-full ${
+         className={`w-full ${
           triggered ? 'opacity-100' : 'opacity-50'
-        } transition-all transition-500 flex flex-col pl-8 pr-7 md:mt-auto`}
+        } transition-all transition-300 pl-8 pr-7 mx-auto flex flex-col justify-end`}
         style={{
           maxWidth: '375px',
         }}
@@ -102,7 +104,7 @@ const ChatTwo = () => {
           </div>
         </SommelierMessage>
 
-        <div className={``}>
+        <div className={`mt-auto h-14`}>
           <ChatInput />
         </div>
       </div>

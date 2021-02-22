@@ -11,6 +11,7 @@ import ChatMessage from './chatMessage';
 import { chatObserver } from './chatobserver';
 import SommelierMessage from './sommelierMessage';
 
+
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -24,8 +25,12 @@ const ChatOne = () => {
   const [triggered, setTriggered] = useState(false);
   const [triggers, setTriggers] = useState([false, false, false, false]);
 
-  const scrollY = useContext(SidebarContext).scroll;
   const boxRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const inputRef = useRef() as MutableRefObject<HTMLDivElement>;
+  
+  useEffect(() => {
+    boxRef.current.scrollTo({behavior:"smooth", top: boxRef.current.scrollHeight, left: 0})
+  },[triggers])
 
   useEffect(() => {
     const triggerSequence = async () => {
@@ -53,18 +58,20 @@ const ChatOne = () => {
 
   return (
     <div
-      className={`w-full flex flex-col lg:w-1/2 bg-chat-bg overflow-hidden items-center justify-end py-6`}
+      className={`w-full flex flex-col lg:w-1/2 bg-chat-bg py-6 justify-end overflow-hidden lg:h-auto h-screen max-h-minus-header-mobile`}
       ref={boxRef}
+
     >
       <div
         className={`w-full ${
           triggered ? 'opacity-100' : 'opacity-50'
-        } transition-all transition-300 flex flex-col pl-8 pr-7 lg:mt-auto`}
+        } transition-all transition-300 pl-8 pr-7 mx-auto flex flex-col justify-end`}
         style={{
           maxWidth: '375px',
         }}
       >
         <ChatMessage
+
           sender={sender}
           className={className}
           trigger={triggers[0]}
@@ -82,22 +89,27 @@ const ChatOne = () => {
           <p>Какое предпочитаете — белое, красное или розовое?</p>
         </SommelierMessage>
         <ChatMessage
+
           sender={sender}
           className={className}
           trigger={triggers[2]}
         >
           <p>Белое сухое, желательно до 5000 за бутылку</p>
         </ChatMessage>
-        <SommelierMessage trigger={triggers[3]}>
+        <SommelierMessage 
+
+
+        trigger={triggers[3]}>
           <p>
             Попробуйте Просекко «Кюве дель Фондаторе» Грациано Меротто — 4-я
             позиция, идеально подходит под ваш запрос
           </p>
         </SommelierMessage>
       </div>
-      <div className={``}>
+      <div ref={inputRef} className={`mt-auto h-14`}>
         <ChatInput />
       </div>
+
     </div>
   );
 };

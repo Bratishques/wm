@@ -29,12 +29,6 @@ const asyncAnim = async (
   setIsTyping(false);
   msgRef.current.style.marginTop = '0px';
   msgRef.current.style.height = msgRef.current.scrollHeight + 32 + 'px';
-  if (window.innerWidth <= 768 && isInViewport(msgRef.current)) {
-    console.log(window.scrollY);
-    window.scrollTo(0, window.scrollY + msgRef.current.scrollHeight + 32);
-    await sleep(500);
-    window.scrollTo(0, window.scrollY + 70);
-  }
 };
 
 export default asyncAnim;

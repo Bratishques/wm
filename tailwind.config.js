@@ -44,8 +44,9 @@ module.exports = {
       },
       maxHeight:{
         "675px" : "675px",
-        "450px" : "450px"
-
+        "450px" : "450px",
+        "minus-header": "calc(100vh - 94px)",
+        "minus-header-mobile": "calc(100vh - 112px)"
       },
       maxWidth: {
         "375px": "375px",

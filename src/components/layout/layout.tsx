@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { ReactNode } from 'react';
+import { MutableRefObject, ReactNode, useEffect, useRef } from 'react';
 import AgeModal from './ageModal';
 import Footer from './footer';
 import Header from './header';
@@ -8,13 +8,28 @@ import Sidebar from './sidebar';
 
 interface Childern {
   children: ReactNode;
+  title?: string;
 }
 
-const Layout = ({ children }: Childern) => {
+const Layout = ({ children, title="Winemate" }: Childern) => {
+
+  const refScrollContainer = useRef() as MutableRefObject<HTMLDivElement>
+ 
+  useEffect(() => {
+    async function getLocomotive() {
+      const Locomotive = (await import("locomotive-scroll")).default;
+      const scroll = new Locomotive({
+        el: refScrollContainer.current,
+        smooth: true,
+      });
+    }
+
+    getLocomotive();
+  }, []);
   return (
-    <div id={`layout`} className={`w-full relative `}>
+    <div id={`layout`} className={`w-full relative`} >
       <Head>
-        <title>Winemate</title>
+        <title>{title}</title>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -38,13 +53,19 @@ const Layout = ({ children }: Childern) => {
         <meta name="theme-color" content="#ffffff" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
+      
+      <div ref={refScrollContainer}>
+
+
       <AgeModal />
       <Overlay />
       <Sidebar />
       <Header />
-      <div className={`pt-30 md:pt-20`}>
+      <div className={`pt-30 md:pt-20`} >
         {children}
         <Footer />
+      </div>
       </div>
     </div>
   );

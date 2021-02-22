@@ -3,8 +3,8 @@ import ChatTwo from '../chat/chatTwo';
 
 const Cases = () => {
   return (
-    <section className={`mt-14 md:mt-31`}>
-      <div className={`flex flex-col lg:flex-row lg:h-screen`}>
+    <section id={`fixed-target`} className={``} data-scroll-section>
+      <div className={`flex flex-col lg:flex-row lg:h-screen  lg:max-h-minus-header`}>
         <div
           className={`w-full lg:w-1/2 flex items-end text-white px-7 py-9 md:py-23 md:px-14`}
           style={{
@@ -12,6 +12,7 @@ const Cases = () => {
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             minHeight: '600px',
+
           }}
         >
           <h2 className={`md:text-h2-big`}>
@@ -21,7 +22,7 @@ const Cases = () => {
         <ChatOne />
       </div>
       <div
-        className={`flex flex-col lg:flex-row-reverse overflow-hidden lg:h-screen`}
+        className={`flex flex-col lg:flex-row-reverse overflow-hidden lg:h-screen lg:max-h-minus-header`}
       >
         <div
           className={`w-full lg:w-1/2 flex items-end text-white px-7 py-9 md:py-23 md:px-14 md:bg-fill-full `}

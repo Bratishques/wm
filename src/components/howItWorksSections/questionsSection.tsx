@@ -5,7 +5,7 @@ const QuestionSection = () => {
   const answer = '';
 
   return (
-    <section className={`mt-12 px-7  lg:mt-10 flex flex-col items-center`}>
+    <section className={`mt-12 px-7  lg:mt-10 flex flex-col items-center`} data-scroll-section>
       <div className={`lg:px-0 w-full lg:w-8/12`}>
         <Notice />
         <div className={`mt-16`}>

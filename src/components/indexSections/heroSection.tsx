@@ -1,12 +1,27 @@
+import SidebarContext from '@/context/sidebarContext';
+import { useContext, useEffect, useRef, useState } from 'react';
 import Messengers from '../messengers';
 
+
 const HeroSection = () => {
+  const [margin, setMargin] = useState(0)
+
+  
+
+
+
   const srcSet = `
                 /images/hero-image-mobile.png 640w,
                 /images/hero-image-desktop.png 1024w
                 `;
   return (
-    <section className={`md:mt-25`}>
+    <section 
+    
+    data-scroll-target="#fixed-target"
+    className={`lg:h-screen z-0`}>
+      <div className={`md:pt-25`}>
+
+      </div>
       <div
         className={`relative w-full sm:px-7 flex flex-col sm:flex-row-reverse`}
       >
@@ -27,18 +42,23 @@ const HeroSection = () => {
             <br />
             мессенджере
           </h1>
-          <div className={`fixed z-40 bottom-0 block sm:hidden w-full`}>
-            <Messengers className={`rounded-t-30px`} />
-          </div>
-          <p className={`text-lead mb-4 px-9 sm:px-0`}>
+
+          <p className={`text-lead mb-4 px-9 sm:px-0 mb-16`}>
             Winemate — это бесплатный сервис рекомендации вин. Где бы вы ни
             находились — напишете сомелье и он быстро ответит: какое вино и где
             купить
           </p>
-          <div className={`sm:block z-40 hidden fixed bottom-0  -ml-7`}>
+          <div className={`fixed z-40 block sm:hidden w-full`} data-scroll-offset="20">
+            <Messengers className={`rounded-t-30px`} />
+          </div>
+      <div className={`sm:block z-40 hidden`}>
             <Messengers className={`rounded-r-30px`} />
           </div>
+      <div className={``}>
         </div>
+      </div>
+ 
+
       </div>
     </section>
   );

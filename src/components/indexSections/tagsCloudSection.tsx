@@ -2,7 +2,7 @@ import TagsCloud from './tagsCloud';
 
 const TagsCloudSection = () => {
   return (
-    <section className={`mt-12 md:mt-23 overflow-hidden`}>
+    <section className={`pt-12 md:pt-23 overflow-hidden bg-white`} data-scroll-section>
       <div className={`w-full flex flex-col items-center`}>
         <h2 className={`md:hidden text-center`}>
           Мы учитываем все ваши пожелания

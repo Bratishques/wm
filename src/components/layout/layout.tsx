@@ -40,7 +40,7 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
       scroll.on('scroll', (args) => {
         if (typeof args.currentElements['case1'] === 'object') {
           let progress = args.currentElements['case1'].progress;
-          console.log(args)
+          console.log(args);
           if (window.innerWidth >= 1024) {
             if (
               progress > 0.01 &&
@@ -51,9 +51,7 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
                 offset: -94,
                 duration: 500,
               });
-              
             }
-
           }
           // ouput log example: 0.34
           // gsap example : myGsapAnimation.progress(progress);
@@ -73,7 +71,6 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
                 duration: 500,
               });
             }
-
           }
         }
       });

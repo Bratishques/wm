@@ -26,7 +26,7 @@ const StepsSection = () => {
   ];
 
   return (
-    <section className={` px-7 relative`} data-scroll-section>
+    <section className={` px-7 relative`}>
       <div className={`mt-12 md:mt-15 flex flex-col lg:flex-row`}>
         <div className={'lg:w-1/3 w-full mb-12'}>
           <div>

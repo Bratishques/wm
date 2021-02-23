@@ -6,7 +6,7 @@ const Investment = () => {
   return (
     <Layout>
       <Recommendations />
-      <section className={`mt-16`}>
+      <section className={`mt-16`} data-scroll-section>
         <div className={`lg:grid lg:grid-cols-12 gap-5 px-7 text-regular`}>
           <div className={`lg:col-span-2`}></div>
           <div className={`lg:col-span-9`}>

@@ -26,6 +26,15 @@ const SidebarContextProvider = ({ children }: Props) => {
   };
 
   useEffect(() => {
+    if (
+      document.getElementsByClassName(`c-scrollbar`) &&
+      document.getElementsByClassName(`c-scrollbar`).length >= 1
+    ) {
+      document.getElementsByClassName(`c-scrollbar`)[0].remove();
+    }
+  });
+
+  useEffect(() => {
     const appHeight = () => {
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);

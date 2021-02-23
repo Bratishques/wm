@@ -5,6 +5,10 @@ import Link from 'next/link';
 const Sidebar = () => {
   const { sidebarOpen, setSidebarOpen } = useContext(SidebarContext);
 
+  const closeSidebar = () => {
+    setSidebarOpen();
+  };
+
   return (
     <div
       id={`sidebar-container`}
@@ -15,7 +19,7 @@ const Sidebar = () => {
     >
       <div className={`flex justify-between items-start`}>
         <Link href={'/'}>
-          <div className={`flex cursor-pointer`}>
+          <div className={`flex cursor-pointer`} onClick={closeSidebar}>
             <img className={`w-14 h-14`} src="/images/invest-logo.svg" alt="" />
             <p className={`pl-7 -mt-1 font-semibold`}>
               Бесплатные <br />
@@ -23,7 +27,7 @@ const Sidebar = () => {
             </p>
           </div>
         </Link>
-        <button className={`ml-12`} onClick={setSidebarOpen}>
+        <button className={`ml-12`} onClick={closeSidebar}>
           <img src="/icons/cross-icon.svg" alt="" />
         </button>
       </div>
@@ -34,12 +38,12 @@ const Sidebar = () => {
           компания
         </p>
         <Link href={`/how-it-works`}>
-          <p className={`cursor-pointer mt-5`} onClick={setSidebarOpen}>
+          <p className={`cursor-pointer mt-5`} onClick={closeSidebar}>
             Как это работает
           </p>
         </Link>
         <Link href={`/news`}>
-          <p className={`cursor-pointer mt-5`} onClick={setSidebarOpen}>
+          <p className={`cursor-pointer mt-5`} onClick={closeSidebar}>
             Новости
           </p>
         </Link>
@@ -51,17 +55,17 @@ const Sidebar = () => {
           компания
         </p>
         <Link href={`/sommelier`}>
-          <p className={`cursor-pointer mt-5`} onClick={setSidebarOpen}>
+          <p className={`cursor-pointer mt-5`} onClick={closeSidebar}>
             Сомелье
           </p>
         </Link>
         <Link href={`/sales`}>
-          <p className={`cursor-pointer mt-5`} onClick={setSidebarOpen}>
+          <p className={`cursor-pointer mt-5`} onClick={closeSidebar}>
             Виноделу и продавцу
           </p>
         </Link>
         <Link href={`/investment`}>
-          <p className={`cursor-pointer mt-5`} onClick={setSidebarOpen}>
+          <p className={`cursor-pointer mt-5`} onClick={closeSidebar}>
             Инвестору
           </p>
         </Link>

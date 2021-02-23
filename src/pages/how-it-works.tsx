@@ -6,18 +6,20 @@ import Recommendations from '@/components/recommendations';
 export default function HowItWorks() {
   return (
     <Layout>
-      <Recommendations />
-      <section className={`mt-18.5 flex justify-center`} data-scroll-section>
-        <div className={`px-7 w-full lg:w-8/12`}>
-          <h1 className={`mx-auto`}>Как это работает</h1>
-          <p className={`mx-auto text-lead`}>
-            Мы бесплатно порекомендуем вам вино, в какой бы точке мира вы ни
-            находились
-          </p>
-        </div>
-      </section>
-      <StepsSection />
-      <QuestionSection />
+      <div data-scroll-section>
+        <Recommendations />
+        <section className={`mt-18.5 flex justify-center`}>
+          <div className={`px-7 w-full lg:w-8/12`}>
+            <h1 className={`mx-auto`}>Как это работает</h1>
+            <p className={`mx-auto text-lead`}>
+              Мы бесплатно порекомендуем вам вино, в какой бы точке мира вы ни
+              находились
+            </p>
+          </div>
+        </section>
+        <StepsSection />
+        <QuestionSection />
+      </div>
     </Layout>
   );
 }

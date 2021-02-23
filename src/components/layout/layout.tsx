@@ -18,7 +18,7 @@ interface Childern {
   children: ReactNode;
   title?: string;
 }
-
+//@ts-ignore
 const Layout = ({ children, title = 'Winemate' }: Childern) => {
   const [triggered, setTriggered] = useState(false);
   const { scroll } = useContext(SidebarContext);

@@ -16,10 +16,13 @@ const SidebarContextProvider = ({ children }: Props) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [scroll, setScroll] = useState(0);
+  const [potentialScroll, setPotentialScroll] = useState(0);
 
-  const scrollListener = () => {
-    console.log(window.scrollY)
+  const scrollListener = (e: Event) => {
+    console.log(e);
     setScroll(window.scrollY);
+    if (window.scrollY < window.innerHeight - 92) {
+    }
   };
 
   useEffect(() => {

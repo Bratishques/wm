@@ -6,7 +6,7 @@ import LangSwitch from './langSwitch';
 const Header = () => {
   const context = useContext(SidebarContext);
   return (
-    <section className={`bg-white z-20 `}>
+    <section data-scroll-sticky className={`bg-white z-20 `}>
       <div
         className={`pt-15 z-20 md:pt-9 pb-4 px-7 md:pb-4 w-full top-0 fixed bg-white `}
       >

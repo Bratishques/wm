@@ -6,17 +6,25 @@ import Layout from '@/components/layout/layout';
 import { MutableRefObject, useEffect, useRef } from 'react';
 
 export default function Home() {
-
-
-
-
   return (
     <Layout>
       <main>
-        <HeroSection />
-        <Cases />
-        <TagsCloudSection />
-        <YoutubeSection />
+        <div>
+          <div />
+          <div>
+            <HeroSection />
+          </div>
+        </div>
+        <div>
+          <Cases />
+        </div>
+        <div data-scroll-section>
+          <TagsCloudSection />
+        </div>
+
+        <div data-scroll-section>
+          <YoutubeSection />
+        </div>
       </main>
     </Layout>
   );

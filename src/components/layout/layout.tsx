@@ -1,5 +1,13 @@
+import SidebarContext from '@/context/sidebarContext';
 import Head from 'next/head';
-import { MutableRefObject, ReactNode, useEffect, useRef } from 'react';
+import {
+  MutableRefObject,
+  ReactNode,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import AgeModal from './ageModal';
 import Footer from './footer';
 import Header from './header';
@@ -11,23 +19,71 @@ interface Childern {
   title?: string;
 }
 
-const Layout = ({ children, title="Winemate" }: Childern) => {
+const Layout = ({ children, title = 'Winemate' }: Childern) => {
+  const [triggered, setTriggered] = useState(false);
+  const { scroll } = useContext(SidebarContext);
 
-  const refScrollContainer = useRef() as MutableRefObject<HTMLDivElement>
- 
+  const refScrollContainer = useRef() as MutableRefObject<HTMLDivElement>;
+
   useEffect(() => {
     async function getLocomotive() {
-      const Locomotive = (await import("locomotive-scroll")).default;
+      const Locomotive = (await import('locomotive-scroll')).default;
       const scroll = new Locomotive({
         el: refScrollContainer.current,
         smooth: true,
+        tablet: {
+          smooth: true,
+        },
+        getDirection: true,
+      });
+
+      scroll.on('scroll', (args) => {
+        if (typeof args.currentElements['case1'] === 'object') {
+          let progress = args.currentElements['case1'].progress;
+          console.log(args)
+          if (window.innerWidth >= 1024) {
+            if (
+              progress > 0.01 &&
+              progress < 0.04 &&
+              args.direction === 'down'
+            ) {
+              scroll.scrollTo(document.getElementById(`case1`), {
+                offset: -94,
+                duration: 500,
+              });
+              
+            }
+
+          }
+          // ouput log example: 0.34
+          // gsap example : myGsapAnimation.progress(progress);
+        }
+
+        if (typeof args.currentElements['case2'] === 'object') {
+          let progress = args.currentElements['case2'].progress;
+
+          if (window.innerWidth >= 1024) {
+            if (
+              progress > 0.01 &&
+              progress < 0.04 &&
+              args.direction === 'down'
+            ) {
+              scroll.scrollTo(document.getElementById(`case2`), {
+                offset: -94,
+                duration: 500,
+              });
+            }
+
+          }
+        }
       });
     }
 
     getLocomotive();
   }, []);
+
   return (
-    <div id={`layout`} className={`w-full relative`} >
+    <div id={`layout`} className={`w-full relative`}>
       <Head>
         <title>{title}</title>
         <link
@@ -53,19 +109,16 @@ const Layout = ({ children, title="Winemate" }: Childern) => {
         <meta name="theme-color" content="#ffffff" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
-      
+
       <div ref={refScrollContainer}>
-
-
-      <AgeModal />
-      <Overlay />
-      <Sidebar />
-      <Header />
-      <div className={`pt-30 md:pt-20`} >
-        {children}
-        <Footer />
-      </div>
+        <AgeModal />
+        <Overlay />
+        <Sidebar />
+        <Header />
+        <div className={`pt-30 md:pt-20`}>
+          {children}
+          <Footer />
+        </div>
       </div>
     </div>
   );

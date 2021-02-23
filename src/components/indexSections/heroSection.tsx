@@ -2,26 +2,16 @@ import SidebarContext from '@/context/sidebarContext';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Messengers from '../messengers';
 
-
 const HeroSection = () => {
-  const [margin, setMargin] = useState(0)
-
-  
-
-
+  const [margin, setMargin] = useState(0);
 
   const srcSet = `
                 /images/hero-image-mobile.png 640w,
                 /images/hero-image-desktop.png 1024w
                 `;
   return (
-    <section 
-    
-    data-scroll-target="#fixed-target"
-    className={`lg:h-screen z-0`}>
-      <div className={`md:pt-25`}>
-
-      </div>
+    <section className={`lg:h-screen z-0`}>
+      <div id="#fixed-target" className={`md:pt-25`}></div>
       <div
         className={`relative w-full sm:px-7 flex flex-col sm:flex-row-reverse`}
       >
@@ -48,17 +38,17 @@ const HeroSection = () => {
             находились — напишете сомелье и он быстро ответит: какое вино и где
             купить
           </p>
-          <div className={`fixed z-40 block sm:hidden w-full`} data-scroll-offset="20">
+          <div
+            className={`fixed bottom-0 z-40 block sm:hidden w-full`}
+            data-scroll-offset="20"
+          >
             <Messengers className={`rounded-t-30px`} />
           </div>
-      <div className={`sm:block z-40 hidden`}>
+          <div className={`sm:block z-40 hidden`}>
             <Messengers className={`rounded-r-30px`} />
           </div>
-      <div className={``}>
+          <div className={``}></div>
         </div>
-      </div>
- 
-
       </div>
     </section>
   );

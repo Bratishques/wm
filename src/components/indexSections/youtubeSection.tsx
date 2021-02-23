@@ -1,6 +1,6 @@
 const YoutubeSection = () => {
   return (
-    <section className={`pt-12 md:pt-23 bg-white`} data-scroll-section>
+    <section className={`pt-12 md:pt-23 bg-white`}>
       <div className={`w-full px-7 md:px-9 flex flex-col md:flex-row`}>
         <div className={`md:w-2/3 w-full`}>
           <h2 className={`mb-3 md:hidden block`}>

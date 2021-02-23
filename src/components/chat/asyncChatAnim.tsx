@@ -20,15 +20,27 @@ const asyncAnim = async (
   setWasTriggered: Function,
   setDisplayed: Function,
   setIsTyping: Function,
+  setAccumHeight: Function,
+  accumHeight: number,
+  msgBoxRef: MutableRefObject<HTMLDivElement>,
+  containRef: MutableRefObject<HTMLDivElement>,
+  last: boolean = false,
 ) => {
   setWasTriggered(true);
   setDisplayed(true);
   setIsTyping(true);
   await sleep(2500);
-  msgRef.current.style.marginTop = msgRef.current.scrollHeight + 32 + 'px';
   setIsTyping(false);
+  msgRef.current.style.marginTop = msgRef.current.scrollHeight + 32 + 'px';
   msgRef.current.style.marginTop = '0px';
   msgRef.current.style.height = msgRef.current.scrollHeight + 32 + 'px';
+  msgBoxRef.current.style.top = accumHeight + 'px';
+  if (!last) {
+    setAccumHeight(msgRef.current.scrollHeight + accumHeight + 42 + 32 + 28);
+  }
+  if (last) {
+    setAccumHeight(msgRef.current.scrollHeight + accumHeight);
+  }
 };
 
 export default asyncAnim;

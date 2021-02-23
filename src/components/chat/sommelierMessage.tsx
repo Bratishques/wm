@@ -13,6 +13,10 @@ interface Props {
   rounded?: boolean;
   className?: string;
   trigger: boolean;
+  setAccumHeight: Function;
+  accumHeight: number;
+  containRef: MutableRefObject<HTMLDivElement>;
+  last?: boolean;
 }
 
 function sleep(ms: number) {
@@ -35,7 +39,12 @@ const SommelierMessage = ({
   rounded = false,
   className = '',
   trigger,
+  setAccumHeight,
+  accumHeight,
+  containRef,
+  last = false,
 }: Props) => {
+  const msgBoxRef = useRef() as MutableRefObject<HTMLDivElement>;
   const msgRef = useRef() as MutableRefObject<HTMLDivElement>;
   const [wasTriggered, setWasTriggered] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
@@ -43,18 +52,32 @@ const SommelierMessage = ({
 
   useEffect(() => {
     if (trigger && !wasTriggered) {
-      asyncAnim(msgRef, setWasTriggered, setDisplayed, setIsTyping);
+      asyncAnim(
+        msgRef,
+        setWasTriggered,
+        setDisplayed,
+        setIsTyping,
+        setAccumHeight,
+        accumHeight,
+        msgBoxRef,
+        containRef,
+        last,
+      );
     }
   }, [trigger]);
 
   return (
     <div
-      className={`flex flex-col mb-7 ${className} ${
+      className={`flex transition-all duration-500 flex-col items-end absolute left-0 ml-4   ${className} ${
         isDisplayed ? '' : 'hidden'
       }`}
+      style={{
+        top: '90%',
+      }}
+      ref={msgBoxRef}
     >
       <div
-        className={`flex flex-col`}
+        className={`flex flex-col mb-7`}
         style={{
           width: '260px',
         }}

@@ -17,6 +17,9 @@ interface Props {
   };
   className?: string;
   trigger: boolean;
+  setAccumHeight: Function;
+  accumHeight: number;
+  containRef: MutableRefObject<HTMLDivElement>;
 }
 
 function sleep(ms: number) {
@@ -40,26 +43,43 @@ const ChatMessage = ({
   sender,
   className,
   trigger,
+  setAccumHeight,
+  accumHeight,
+  containRef,
 }: Props) => {
   const msgRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const msgBoxRef = useRef() as MutableRefObject<HTMLDivElement>;
   const [wasTriggered, setWasTriggered] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const [isDisplayed, setDisplayed] = useState(false);
 
   useEffect(() => {
     if (trigger && !wasTriggered) {
-      asyncAnim(msgRef, setWasTriggered, setDisplayed, setIsTyping);
+      asyncAnim(
+        msgRef,
+        setWasTriggered,
+        setDisplayed,
+        setIsTyping,
+        setAccumHeight,
+        accumHeight,
+        msgBoxRef,
+        containRef,
+      );
     }
   }, [trigger]);
 
   return (
     <div
-      className={`flex flex-col items-end mb-7 ${className} ${
+      className={`flex transition-all duration-500 flex-col items-end absolute  right-0  ${className} ${
         isDisplayed ? '' : 'hidden'
       }`}
+      style={{
+        top: '90%',
+      }}
+      ref={msgBoxRef}
     >
       <div
-        className={`flex flex-col justify-end `}
+        className={`flex flex-col mb-7`}
         style={{
           width: '260px',
         }}
@@ -79,9 +99,12 @@ const ChatMessage = ({
           ref={msgRef}
           className={`${
             isTyping ? '' : 'py-4'
-          } h-0 px-5 transition-all duration-500 relative bottom-0 overflow-hidden bg-chat-message-bg font-medium   text-chat-message rounded-t-30px rounded-bl-30px ${
-            rounded ? 'rounded-br-30px' : ''
+          } transition-all duration-300 overflow-hidden relative bottom-0  px-5 text-chat-message bg-chat-message-bg font-medium rounded-t-30px rounded-bl-30px overlow-hidden ${
+            rounded ? 'rounded-bl-30px' : ''
           }`}
+          style={{
+            height: '0px',
+          }}
         >
           {children}
         </div>

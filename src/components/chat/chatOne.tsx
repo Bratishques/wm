@@ -74,7 +74,7 @@ const ChatOne = () => {
 
   return (
     <div
-      className={`w-full flex flex-col lg:w-1/2 bg-white py-6 justify-end overflow-hidden lg:h-auto max-h-minus-header-mobile lg:max-h-minus-header transition-all `}
+      className={`w-full flex flex-col lg:w-1/2 bg-white py-6 justify-end overflow-hidden lg:h-auto max-h-minus-header-mobile lg:max-h-minus-header transition-all bg-chatting-box-bg`}
       ref={boxRef}
     >
       <div className={`pt-4 pr-4 pb-4 pt-8`}>

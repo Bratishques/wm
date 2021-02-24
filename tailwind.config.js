@@ -23,7 +23,8 @@ module.exports = {
         "placeholder-gray": "#BDBDBD",
         "notice-gray": " #ECF0F3",
         "indicator-bg" : "#F2D7E4",
-        "indicator-ball": "#DEA4C0"
+        "indicator-ball": "#DEA4C0",
+        "chatting-box-bg": "#ECEFF6"
       },
       spacing:{
         14: "3.5rem",

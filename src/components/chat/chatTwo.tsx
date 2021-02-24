@@ -126,20 +126,13 @@ const ChatTwo = () => {
             rounded={true}
             className={className}
             trigger={triggers[3]}
+            last={true}
           >
             <p>
               Попробуйте Бордоский бленд от Шато Ла Фавьер. Есть в винном бутике
               «Сыр и вино», 8-я Линия, 44
             </p>
-          </SommelierMessage>
-
-          <SommelierMessage
-            last={true}
-            containRef={containRef}
-            accumHeight={accumHeight}
-            setAccumHeight={setAccumHeight}
-            trigger={triggers[4]}
-          >
+            <br/>
             <div>
               Или закажите доставку <br />
               <a href="" className={`underline`}>

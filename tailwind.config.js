@@ -43,15 +43,15 @@ module.exports = {
       },
       minHeight:{
         "450px" : "450px",
-        "minus-chat": "calc(100vh - 66px - 76px)",
+        "minus-chat": "calc(100vh - 66px - 94spx)",
         "minus-chat-mobile": "calc(100vh - 66px - 76px - 124px)"
       },
       maxHeight:{
         "675px" : "675px",
         "450px" : "450px",
         "minus-header": "calc(100vh - 94px)",
-        "minus-header-mobile": "calc(100vh - 124px - 66px)",
-        "minus-chat": "calc(100vh - 66px - 76px)",
+        "minus-header-mobile": "calc(100vh - 124px - 76px)",
+        "minus-chat": "calc(100vh - 66px - 100px)",
         "minus-chat-mobile": "calc(100vh - 66px - 76px - 124px)"
       },
       maxWidth: {

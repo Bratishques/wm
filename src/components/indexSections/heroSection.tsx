@@ -45,22 +45,6 @@ const HeroSection = () => {
         </div>
         </div>
         </div>
-      <div
-        className={`relative h-full w-full sm:px-7 flex flex-col sm:flex-row-reverse`}
-      >
-        <div className={`w-full sm:w-1/2 w-7/12 mb-6 md:mb-0`}>
-          <img
-            className={`w-full mt-16 md:mt-0 lg:hidden`}
-            src="/images/hero-image-mobile.png"
-            alt=""
-          />
-          <img
-            className={`hidden lg:block w-full`}
-            src={`/images/hero-image-desktop.png`}
-          />
-        </div>
-
-      </div>
     </section>
   );
 };

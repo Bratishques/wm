@@ -58,7 +58,7 @@ const ChatTwo = () => {
           return false;
         });
         setTriggers(newArr);
-        await sleep(3000);
+        await sleep(2000);
       }
     };
 

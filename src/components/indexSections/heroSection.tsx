@@ -11,11 +11,11 @@ const HeroSection = () => {
                 `;
   return (
     <section className={`lg:h-screen z-0`}>
-      <div id="#fixed-target" className={`md:pt-25`}></div>
+      <div className={`md:pt-25`}></div>
       <div
         className={`relative w-full sm:px-7 flex flex-col sm:flex-row-reverse`}
       >
-        <div className={`w-full sm:w-1/2 lg:w-7/12 mb-6 md:mb-0`}>
+        <div className={`w-full sm:w-1/2 w-7/12 mb-6 md:mb-0`}>
           <img
             className={`w-full mt-16 md:mt-0 lg:hidden`}
             src="/images/hero-image-mobile.png"
@@ -26,7 +26,7 @@ const HeroSection = () => {
             src={`/images/hero-image-desktop.png`}
           />
         </div>
-        <div className={`relative sm:w-1/2 lg:w-5/12 sm:px-0 sm:pr-5 `}>
+        <div className={`relative sm:w-1/2 w-full sm:px-0 sm:pr-5 `}>
           <h1 className={`px-9 sm:px-0`}>
             Сомелье в вашем
             <br />
@@ -44,9 +44,7 @@ const HeroSection = () => {
           >
             <Messengers className={`rounded-t-30px`} />
           </div>
-          <div className={`sm:block z-40 hidden`}>
-            <Messengers className={`rounded-r-30px`} />
-          </div>
+
           <div className={``}></div>
         </div>
       </div>

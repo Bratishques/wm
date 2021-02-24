@@ -25,7 +25,7 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
 
   const refScrollContainer = useRef() as MutableRefObject<HTMLDivElement>;
 
-  useEffect(() => {
+ useEffect(() => {
     async function getLocomotive() {
       const Locomotive = (await import('locomotive-scroll')).default;
       const scroll = new Locomotive({
@@ -37,7 +37,7 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
         getDirection: true,
       });
 
-      scroll.on('scroll', (args) => {
+  scroll.on('scroll', (args) => {
         if (typeof args.currentElements['case1'] === 'object') {
           let progress = args.currentElements['case1'].progress;
           console.log(args);
@@ -73,11 +73,11 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
             }
           }
         }
-      });
+      })
     }
 
     getLocomotive();
-  }, []);
+  }, []); 
 
   return (
     <div id={`layout`} className={`w-full relative`}>

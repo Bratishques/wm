@@ -29,7 +29,7 @@ const asyncAnim = async (
   setWasTriggered(true);
   setDisplayed(true);
   setIsTyping(true);
-  await sleep(2500);
+  await sleep(1500);
   setIsTyping(false);
   msgRef.current.style.marginTop = msgRef.current.scrollHeight + 32 + 'px';
   msgRef.current.style.marginTop = '0px';

@@ -39,20 +39,20 @@ module.exports = {
         "10px": "10px",
         "450px" : "450px",
         "260px": "260px",
-        "minus-chat": "calc(100vh - 112px - 76px)"
+        "minus-chat": "calc(100vh - 66px - 76px)"
       },
       minHeight:{
         "450px" : "450px",
-        "minus-chat": "calc(100vh - 112px - 76px)",
-        "minus-chat-mobile": "calc(100vh - 112px - 76px - 124px)"
+        "minus-chat": "calc(100vh - 66px - 76px)",
+        "minus-chat-mobile": "calc(100vh - 66px - 76px - 124px)"
       },
       maxHeight:{
         "675px" : "675px",
         "450px" : "450px",
         "minus-header": "calc(100vh - 94px)",
-        "minus-header-mobile": "calc(100vh - 236px)",
-        "minus-chat": "calc(100vh - 112px - 76px)",
-        "minus-chat-mobile": "calc(100vh - 112px - 76px - 124px)"
+        "minus-header-mobile": "calc(100vh - 124px - 66px)",
+        "minus-chat": "calc(100vh - 66px - 76px)",
+        "minus-chat-mobile": "calc(100vh - 66px - 76px - 124px)"
       },
       maxWidth: {
         "375px": "375px",

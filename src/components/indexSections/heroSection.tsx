@@ -11,22 +11,21 @@ const HeroSection = () => {
                 `;
   return (
     <section className={`lg:h-screen z-0`}>
-      <div className={`md:pt-25`}></div>
-      <div
-        className={`relative w-full sm:px-7 flex flex-col sm:flex-row-reverse`}
-      >
-        <div className={`w-full sm:w-1/2 w-7/12 mb-6 md:mb-0`}>
-          <img
-            className={`w-full mt-16 md:mt-0 lg:hidden`}
-            src="/images/hero-image-mobile.png"
-            alt=""
-          />
-          <img
-            className={`hidden lg:block w-full`}
-            src={`/images/hero-image-desktop.png`}
-          />
-        </div>
-        <div className={`relative sm:w-1/2 w-full sm:px-0 sm:pr-5 `}>
+      <div className={`relative`}>
+        <div
+          className={`relative flex flex-col lg:flex-row-reverse lg:h-screen lg:max-h-minus-header`}
+        >
+          <div
+            className={`w-full lg:w-1/2 flex items-end text-white px-7 py-9 md:py-23 md:px-14`}
+            style={{
+              backgroundImage: 'url(/images/hero-image-mobile.png)',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              minHeight: '600px',
+            }}
+          >
+          </div>
+          <div className={`relative sm:w-1/2 w-full  flex flex-col justify-center pt-6 sm:px-9 sm:pr-24 `}>
           <h1 className={`px-9 sm:px-0`}>
             Сомелье в вашем
             <br />
@@ -40,13 +39,27 @@ const HeroSection = () => {
           </p>
           <div
             className={`fixed bottom-0 z-40 block sm:hidden w-full`}
-            data-scroll-offset="20"
           >
             <Messengers className={`rounded-t-30px`} />
           </div>
-
-          <div className={``}></div>
         </div>
+        </div>
+        </div>
+      <div
+        className={`relative h-full w-full sm:px-7 flex flex-col sm:flex-row-reverse`}
+      >
+        <div className={`w-full sm:w-1/2 w-7/12 mb-6 md:mb-0`}>
+          <img
+            className={`w-full mt-16 md:mt-0 lg:hidden`}
+            src="/images/hero-image-mobile.png"
+            alt=""
+          />
+          <img
+            className={`hidden lg:block w-full`}
+            src={`/images/hero-image-desktop.png`}
+          />
+        </div>
+
       </div>
     </section>
   );

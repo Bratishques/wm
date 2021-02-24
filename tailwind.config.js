@@ -43,8 +43,8 @@ module.exports = {
       },
       minHeight:{
         "450px" : "450px",
-        "minus-chat": "calc(100vh - 66px - 94spx)",
-        "minus-chat-mobile": "calc(100vh - 66px - 76px - 124px)"
+        "minus-chat": "calc(100vh - 66px - 120px)",
+        "minus-chat-mobile": "calc(100vh - 66px - 120px - 124px)"
       },
       maxHeight:{
         "675px" : "675px",

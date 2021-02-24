@@ -62,8 +62,8 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
 
           if (window.innerWidth >= 1024) {
             if (
-              progress > 0.01 &&
-              progress < 0.04 &&
+              progress > 0.06 &&
+              progress < 0.10 &&
               args.direction === 'down'
             ) {
               scroll.scrollTo(document.getElementById(`case2`), {

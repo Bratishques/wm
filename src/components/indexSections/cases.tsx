@@ -13,7 +13,7 @@ const Cases = () => {
           className={`relative flex flex-col lg:flex-row lg:h-screen  lg:max-h-minus-header`}
         >
           <div
-            className={`w-full lg:w-1/2 flex items-end text-white px-7 py-9 md:py-23 md:px-14`}
+            className={`w-full lg:w-1/2 flex items-end text-white px-7 py-9 md:pb-36 md:px-14`}
             style={{
               backgroundImage: 'url(/images/case-one-desktop.png)',
               backgroundSize: 'cover',
@@ -35,7 +35,7 @@ const Cases = () => {
           className={`top-0 flex flex-col lg:flex-row-reverse overflow-hidden lg:h-screen lg:max-h-minus-header`}
         >
           <div
-            className={`w-full lg:w-1/2 flex items-end text-white px-7 py-9 md:py-23 md:px-14  `}
+            className={`w-full lg:w-1/2 flex items-end text-white px-7 py-9 md:pb-36 md:px-14  `}
             style={{
               background:
                 'linear-gradient(180.04deg, rgba(0, 0, 0, 0) 0.04%, rgba(0, 0, 0, 0.7) 67.17%), url(/images/case-two-desktop.png)',

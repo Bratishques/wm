@@ -40,7 +40,6 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
   scroll.on('scroll', (args) => {
         if (typeof args.currentElements['case1'] === 'object') {
           let progress = args.currentElements['case1'].progress;
-          console.log(args);
           if (window.innerWidth >= 1024) {
             if (
               progress > 0.01 &&

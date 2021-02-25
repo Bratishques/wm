@@ -117,3 +117,118 @@ html.has-scroll-dragging {
   [data-scroll-direction="horizontal"] .c-scrollbar_thumb {
     right: auto;
     bottom: 0; }
+
+
+
+  .tags-8 {
+      animation: Group_208__x__1 708ms 0ms ease-in-out forwards;
+  }
+  
+  @keyframes Group_208__x__1 {
+    from {
+      left: 50%
+  }
+
+  to {
+      left: 0%
+  }
+  }
+  
+  .tags-7 {
+      animation: Group_212__x__1 836ms 0ms ease-in-out forwards;
+  }
+  
+  @keyframes Group_212__x__1 {
+    from {
+      left: 50%
+  }
+
+  to {
+      left: 0%
+  }
+  }
+  
+  .tags-6 {
+      animation: Group_211__x__1 984ms 0ms ease-in-out forwards;
+  }
+  
+  @keyframes Group_211__x__1 {
+    from {
+      left: 50%
+  }
+
+  to {
+      left: 0%
+  }
+  }
+  
+  .tags-5 {
+      animation: Group_209__x__1 930ms 0ms ease-in-out forwards;
+  }
+  
+  @keyframes Group_209__x__1 {
+    from {
+      left: -50%
+  }
+
+  to {
+      left: 0%
+  }
+  }
+  
+ .tags-4 {
+      animation: Group_206__x__1 435ms 0ms ease-in-out forwards;
+  }
+  
+  @keyframes Group_206__x__1 {
+    from {
+      left: 50%
+  }
+
+  to {
+      left: 0%
+  }
+  }
+  
+  .tags-3 {
+      animation: Group_210__x__1 676ms 0ms ease-in-out forwards;
+  }
+  
+  @keyframes Group_210__x__1 {
+    from {
+      left: 50%
+  }
+
+  to {
+      left: 0%
+  }
+  }
+  
+  .tags-2 {
+      animation: Group_207__x__1 1009ms 0ms ease-in-out forwards;
+  }
+  
+  @keyframes Group_207__x__1 {
+    from {
+      left: -50%
+  }
+
+  to {
+      left: 0%
+  }
+  }
+  
+  .tags-1 {
+      animation: Group_205__x__1 836ms 0ms ease-in-out forwards;
+  }
+  
+  @keyframes Group_205__x__1 {
+    from {
+      left: -50%
+  }
+
+  to {
+      left: 0%
+  }
+  }
+  

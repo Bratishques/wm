@@ -21,11 +21,11 @@ const HeroSection = () => {
               backgroundImage: 'url(/images/hero-image-mobile.png)',
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
-              minHeight: '600px',
+              minHeight: "calc(100vh - 272px)",
             }}
           >
           </div>
-          <div className={`relative sm:w-1/2 w-full  flex flex-col justify-center pt-6 sm:px-9 sm:pr-24 `}>
+          <div className={`relative lg:w-1/2 w-full  flex flex-col justify-center pt-6 sm:px-9 sm:pr-24 `}>
           <h1 className={`px-9 sm:px-0`}>
             Сомелье в вашем
             <br />
@@ -33,9 +33,9 @@ const HeroSection = () => {
           </h1>
 
           <p className={`text-lead mb-4 px-9 sm:px-0 mb-16`}>
-            Winemate — это бесплатный сервис рекомендации вин. Где бы вы ни
-            находились — напишете сомелье и он быстро ответит: какое вино и где
-            купить
+          Winemate&nbsp;&mdash; это бесплатный сервис рекомендации вин. Где&nbsp;бы вы&nbsp;ни
+находились&nbsp;&mdash; напишете сомелье и&nbsp;он&nbsp;быстро ответит: какое вино и&nbsp;где
+купить
           </p>
           <div
             className={`fixed bottom-0 z-40 block sm:hidden w-full`}

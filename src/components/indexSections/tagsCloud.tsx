@@ -2,10 +2,13 @@ import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import TagButton from '../tagButton';
 import { tagsObserver } from './tagsObserver';
 
-const TagsCloud = () => {
+interface Props {
+  containRef: MutableRefObject<HTMLDivElement>
+}
+
+const TagsCloud = ({containRef}:Props) => {
 
   const [trigger, setTrigger] = useState(false)
-  const containRef = useRef() as MutableRefObject<HTMLDivElement>
 
   useEffect(() => {
     tagsObserver(setTrigger, containRef.current)
@@ -103,7 +106,7 @@ const TagsCloud = () => {
     style={{
       minWidth: "1300px"
     }}
-    className={`mt-8 px-6 w-full flex flex-col items-center`} ref={containRef}>
+    className={`mt-8 px-6 w-full flex flex-col items-center`}>
       {rows.map((row, i) => {
         return (
           <div

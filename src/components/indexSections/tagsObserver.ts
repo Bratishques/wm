@@ -1,7 +1,7 @@
 const tagsObserver = (trigger: Function, element: HTMLDivElement) => {
     const options = {
-      rootMargin: '60px 300px 60px 300px',
-      threshold: 0.28,
+      rootMargin: '40px',
+      threshold: 0.9,
     };
     const callback = function (entries: IntersectionObserverEntry[]) {
       entries.forEach((a) => {

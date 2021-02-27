@@ -52,8 +52,6 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
               });
             }
           }
-          // ouput log example: 0.34
-          // gsap example : myGsapAnimation.progress(progress);
         }
 
         if (typeof args.currentElements['case2'] === 'object') {
@@ -83,11 +81,6 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
       <Head>
         <title>{title}</title>
         <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
           rel="icon"
           type="image/png"
           sizes="32x32"
@@ -99,10 +92,6 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div ref={refScrollContainer}>

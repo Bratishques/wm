@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <section className={`pt-36 pb-32 bg-white`} data-scroll-section>
+    <section className={`pt-36 pb-32 md:pb-8 bg-white`} data-scroll-section>
       <div className={`md:px-8 px-12`}>
         <div className={`w-full md:flex md:flex-row md:justify-between mb-11`}>
           <img
@@ -19,11 +19,11 @@ const Footer = () => {
         <div className={`w-full h-1 bg-wine opacity-25 mb-5.5`} />
         <div className={`mb-4 text-placeholder-gray text-base`}>
           <a href="" target="_blank" rel="noopener noreferrer">
-            <p className={`mb-3 text-center md:text-left`}>
+            <p className={`mb-3 text-center md:text-right`}>
               Политика обработки персональных данных
             </p>
           </a>
-          <p className={`text-center md:text-left`}>
+          <p className={`text-center md:text-right`}>
             © 2020 Wine Global Management Limited
           </p>
         </div>

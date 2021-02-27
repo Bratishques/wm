@@ -11,30 +11,33 @@ export default function Home() {
     <Layout>
       <main>
         <div
-        className={`lg:h-screen relative overflow-hidden
+          className={`lg:h-screen relative overflow-hidden
         `}
-        data-scroll-section>
-          <div 
-          className={` absolute`}
-          style={{
-            bottom: "-100vh",
-            top: "-94px",
-            right: 0,
-            left: 0,
-          }}
-          
-          id="fixed">
-
-          </div>
-            <div
+          data-scroll-section
+        >
+          <div
+            className={` absolute`}
             style={{
-              top: "0px",
+              bottom: '-100vh',
+              top: '-94px',
               right: 0,
               left: 0,
             }}
-            className={`h-full lg:absolute`} data-scroll data-scroll-sticky data-scroll-target="#fixed">
-              <HeroSection />
-            </div>
+            id="fixed"
+          ></div>
+          <div
+            style={{
+              top: '0px',
+              right: 0,
+              left: 0,
+            }}
+            className={`h-full lg:absolute`}
+            data-scroll
+            data-scroll-sticky
+            data-scroll-target="#fixed"
+          >
+            <HeroSection />
+          </div>
         </div>
         <div>
           <Cases />
@@ -47,8 +50,8 @@ export default function Home() {
           <YoutubeSection />
         </div>
         <div className={`sm:block z-40 hidden fixed bottom-0`}>
-            <Messengers className={`rounded-r-30px`} />
-          </div>
+          <Messengers className={`rounded-r-30px`} />
+        </div>
       </main>
     </Layout>
   );

@@ -6,7 +6,21 @@ const YoutubeSection = () => {
           <h2 className={`mb-3 md:hidden block`}>
             Подписывайтесь на YouTube-канал о вине
           </h2>
-          <img className={`w-full`} src="/images/youtube-image.png" alt="" />
+          <div 
+          style={{
+            paddingBottom: "56.25%"
+          }}
+          
+          className={`w-full h-full relative`}>
+          <iframe style={{
+            position: "absolute",
+            top: "0",
+            left: "0",
+            width: "100%",
+            height: "100%",
+            border: "0"
+          }} src="https://www.youtube.com/embed/CXdqwO-nWoY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
         </div>
         <div className={`md:w-1/3 w-full md:ml-5 flex flex-col justify-center`}>
           <h2 className={`mb-4 hidden md:block`}>

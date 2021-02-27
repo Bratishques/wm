@@ -72,9 +72,20 @@ const Sidebar = () => {
       </div>
 
       <div className={`w-41.5 flex justify-between mt-auto`}>
-        <img className={`w-11`} src="/icons/facebook-icon.svg" alt="" />
-        <img className={`w-11`} src="/icons/instagram-icon.svg" alt="" />
-        <img className={`w-11`} src="/icons/youtube-icon.svg" alt="" />
+        <a href="">
+          <img className={`w-11`} src="/icons/facebook-icon.svg" alt="" />
+        </a>
+
+        <a href="">
+          <img className={`w-11`} src="/icons/instagram-icon.svg" alt="" />
+        </a>
+
+        <a
+          className={`w-11 flex items-center`}
+          href="https://www.youtube.com/channel/UCJoTqbRHZA-f3_cl8dwzoCw"
+        >
+          <img src="/icons/youtube-icon.svg" alt="Youtube" />
+        </a>
       </div>
     </div>
   );

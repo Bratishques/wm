@@ -11,9 +11,20 @@ const Footer = () => {
             alt=""
           />
           <div className={`w-41.5 flex justify-between  mx-auto md:mx-0`}>
-            <img className={`w-11`} src="/icons/facebook-icon.svg" alt="" />
-            <img className={`w-11`} src="/icons/instagram-icon.svg" alt="" />
-            <img className={`w-11`} src="/icons/youtube-icon.svg" alt="" />
+            <a href="">
+              <img className={`w-11`} src="/icons/facebook-icon.svg" alt="" />
+            </a>
+
+            <a href="">
+              <img className={`w-11`} src="/icons/instagram-icon.svg" alt="" />
+            </a>
+
+            <a
+              className={`w-11`}
+              href="https://www.youtube.com/channel/UCJoTqbRHZA-f3_cl8dwzoCw"
+            >
+              <img src="/icons/youtube-icon.svg" alt="Youtube" />
+            </a>
           </div>
         </div>
         <div className={`w-full h-1 bg-wine opacity-25 mb-5.5`} />

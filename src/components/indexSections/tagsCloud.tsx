@@ -3,16 +3,15 @@ import TagButton from '../tagButton';
 import { tagsObserver } from './tagsObserver';
 
 interface Props {
-  containRef: MutableRefObject<HTMLDivElement>
+  containRef: MutableRefObject<HTMLDivElement>;
 }
 
-const TagsCloud = ({containRef}:Props) => {
-
-  const [trigger, setTrigger] = useState(false)
+const TagsCloud = ({ containRef }: Props) => {
+  const [trigger, setTrigger] = useState(false);
 
   useEffect(() => {
-    tagsObserver(setTrigger, containRef.current)
-  },[])
+    tagsObserver(setTrigger, containRef.current);
+  }, []);
   const rows = [
     {
       items: [
@@ -23,8 +22,8 @@ const TagsCloud = ({containRef}:Props) => {
         'Сортовой состав винограда',
       ],
       margin: '95px',
-      className: "tags-1",
-      direction: "left"
+      className: 'tags-1',
+      direction: 'left',
     },
     {
       items: [
@@ -35,8 +34,8 @@ const TagsCloud = ({containRef}:Props) => {
         'Содержание алкоголя',
       ],
       margin: '14px',
-      className: "tags-2",
-      direction: "left"
+      className: 'tags-2',
+      direction: 'left',
     },
     {
       items: [
@@ -45,8 +44,8 @@ const TagsCloud = ({containRef}:Props) => {
         'Сортовой состав винограда',
       ],
       margin: '55px',
-      className: "tags-3",
-      direction: "right"
+      className: 'tags-3',
+      direction: 'right',
     },
     {
       items: [
@@ -57,8 +56,8 @@ const TagsCloud = ({containRef}:Props) => {
         'Объём тары',
       ],
       margin: '0px',
-      className: "tags-4",
-      direction: "right"
+      className: 'tags-4',
+      direction: 'right',
     },
     {
       items: [
@@ -67,8 +66,8 @@ const TagsCloud = ({containRef}:Props) => {
         'Температура подачи',
       ],
       margin: '26px',
-      className: "tags-5",
-      direction: "left"
+      className: 'tags-5',
+      direction: 'left',
     },
     {
       items: [
@@ -79,14 +78,14 @@ const TagsCloud = ({containRef}:Props) => {
         'Вкусовые свойства',
       ],
       margin: '55px',
-      className: "tags-6",
-      direction: "right"
+      className: 'tags-6',
+      direction: 'right',
     },
     {
       items: ['Сортовой состав винограда', 'Объём тары', 'Винные бренды'],
       margin: '127px',
-      className: "tags-7",
-      direction: "right"
+      className: 'tags-7',
+      direction: 'right',
     },
     {
       items: [
@@ -96,33 +95,35 @@ const TagsCloud = ({containRef}:Props) => {
         'Особенности производства',
       ],
       margin: '42px',
-      className: "tags-8",
-      direction: "right"
+      className: 'tags-8',
+      direction: 'right',
     },
   ];
 
   return (
-    <div 
-    style={{
-      minWidth: "1300px"
-    }}
-    className={`mt-8 px-6 w-full flex flex-col items-center`}>
+    <div
+      style={{
+        minWidth: '1300px',
+      }}
+      className={`mt-8 px-6 w-full flex flex-col items-center`}
+    >
       {rows.map((row, i) => {
         return (
           <div
-            className={`mb-2.5 flex flex-nowrap w-full relative ${trigger && row.className}`}
+            className={`mb-2.5 flex flex-nowrap w-full relative ${
+              trigger && row.className
+            }`}
             key={`row${i}`}
             style={{
-              left: row.direction === "left" ? "-50%" : "50%",
+              left: row.direction === 'left' ? '-50%' : '50%',
               marginLeft: row.margin,
             }}
           >
-            <div className={`${"mx-auto"}  transition-all duration-1000`}>
-            {row.items.map((item, j) => {
-              return <TagButton key={`item${j}row${i}`}>{item}</TagButton>;
-            })}
+            <div className={`${'mx-auto'}  transition-all duration-1000`}>
+              {row.items.map((item, j) => {
+                return <TagButton key={`item${j}row${i}`}>{item}</TagButton>;
+              })}
             </div>
-
           </div>
         );
       })}

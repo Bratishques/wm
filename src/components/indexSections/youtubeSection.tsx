@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 const YoutubeSection = () => {
+
+  const [triggerYT, setTriggerYT] = useState(false)
   return (
     <section className={`pt-12 md:pt-23 bg-white`}>
       <div className={`w-full px-7 md:px-9 flex flex-col md:flex-row`}>
@@ -7,11 +11,27 @@ const YoutubeSection = () => {
             Подписывайтесь на YouTube-канал о вине
           </h2>
           <div 
+          onClick={() => {
+            setTriggerYT(true)
+          }}
           style={{
             paddingBottom: "56.25%"
           }}
           
           className={`w-full h-full relative`}>
+            <img
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "0",
+              width: "100%",
+              height: "100%",
+              border: "0"
+            }}
+            className = {triggerYT ? "hidden" : ""}
+            src="/images/youtube-image.png"
+            />
+
           <iframe style={{
             position: "absolute",
             top: "0",
@@ -20,8 +40,8 @@ const YoutubeSection = () => {
             height: "100%",
             border: "0"
           }} 
-          src="https://www.youtube.com/embed/CXdqwO-nWoY"
-          frameborder="0" 
+          className = {!triggerYT ? "hidden" : ""}
+          src= "https://www.youtube.com/embed/CXdqwO-nWoY?autoplay=1"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>

@@ -18,7 +18,7 @@ const YoutubeSection = () => {
             paddingBottom: "56.25%"
           }}
           
-          className={`w-full h-full relative`}>
+          className={`w-full h-full relative cursor-pointer`}>
             <img
             style={{
               position: "absolute",

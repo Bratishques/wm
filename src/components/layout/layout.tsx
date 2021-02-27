@@ -25,7 +25,7 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
 
   const refScrollContainer = useRef() as MutableRefObject<HTMLDivElement>;
 
- useEffect(() => {
+  useEffect(() => {
     async function getLocomotive() {
       const Locomotive = (await import('locomotive-scroll')).default;
       const scroll = new Locomotive({
@@ -37,7 +37,7 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
         getDirection: true,
       });
 
-  scroll.on('scroll', (args) => {
+      scroll.on('scroll', (args) => {
         if (typeof args.currentElements['case1'] === 'object') {
           let progress = args.currentElements['case1'].progress;
           if (window.innerWidth >= 1024) {
@@ -60,7 +60,7 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
           if (window.innerWidth >= 1024) {
             if (
               progress > 0.06 &&
-              progress < 0.10 &&
+              progress < 0.1 &&
               args.direction === 'down'
             ) {
               scroll.scrollTo(document.getElementById(`case2`), {
@@ -70,28 +70,23 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
             }
           }
         }
-      })
+      });
     }
 
     getLocomotive();
-  }, []); 
+  }, []);
 
   return (
     <div id={`layout`} className={`w-full relative`}>
       <Head>
         <title>{title}</title>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+        <link rel="manifest" href="/site.webmanifest"/>
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#a3195b"/>
+        <meta name="msapplication-TileColor" content="#da532c"/>
+        <meta name="theme-color" content="#ffffff"/>
       </Head>
 
       <div ref={refScrollContainer}>

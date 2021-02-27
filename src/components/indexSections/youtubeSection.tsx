@@ -19,7 +19,10 @@ const YoutubeSection = () => {
             width: "100%",
             height: "100%",
             border: "0"
-          }} src="https://www.youtube.com/embed/CXdqwO-nWoY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          }} 
+          src="https://www.youtube.com/embed/CXdqwO-nWoY"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
         <div className={`md:w-1/3 w-full md:ml-5 flex flex-col justify-center`}>

@@ -1,8 +1,17 @@
-import { useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from 'react';
+import YTPlayer from 'yt-player';
 
 const YoutubeSection = () => {
+  const [triggerYT, setTriggerYT] = useState(false);
 
-  const [triggerYT, setTriggerYT] = useState(false)
+  useEffect(() => {
+    if (triggerYT) {
+      const player = new YTPlayer('#yt-frame');
+      player.load('CXdqwO-nWoY');
+      player.play();
+    }
+  }, [triggerYT]);
+
   return (
     <section className={`pt-12 md:pt-23 bg-white`}>
       <div className={`w-full px-7 md:px-9 flex flex-col md:flex-row`}>
@@ -10,39 +19,40 @@ const YoutubeSection = () => {
           <h2 className={`mb-3 md:hidden block`}>
             Подписывайтесь на YouTube-канал о вине
           </h2>
-          <div 
-          onClick={() => {
-            setTriggerYT(true)
-          }}
-          style={{
-            paddingBottom: "56.25%"
-          }}
-          
-          className={`w-full h-full relative cursor-pointer`}>
-            <img
-            style={{
-              position: "absolute",
-              top: "0",
-              left: "0",
-              width: "100%",
-              height: "100%",
-              border: "0"
+          <div
+            onClick={() => {
+              setTriggerYT(true);
             }}
-            className = {triggerYT ? "hidden" : ""}
-            src="/images/youtube-image.png"
+            style={{
+              paddingBottom: '56.25%',
+            }}
+            className={`w-full h-full relative cursor-pointer`}
+          >
+            <img
+              style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                width: '100%',
+                height: '100%',
+                border: '0',
+              }}
+              className={triggerYT ? 'hidden' : ''}
+              src="/images/youtube-image.png"
             />
 
-          <iframe style={{
-            position: "absolute",
-            top: "0",
-            left: "0",
-            width: "100%",
-            height: "100%",
-            border: "0"
-          }} 
-          className = {!triggerYT ? "hidden" : ""}
-          src= "https://www.youtube.com/embed/CXdqwO-nWoY?autoplay=1"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div
+              style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                width: '100%',
+                height: '100%',
+                border: '0',
+              }}
+              id={`yt-frame`}
+              className={!triggerYT ? 'hidden' : ''}
+            ></div>
           </div>
         </div>
         <div className={`md:w-1/3 w-full md:ml-5 flex flex-col justify-center`}>

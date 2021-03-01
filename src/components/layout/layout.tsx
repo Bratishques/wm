@@ -80,7 +80,7 @@ const Layout = ({ children, title = 'Winemate' }: Childern) => {
     <div id={`layout`} className={`w-full relative`}>
       <Head>
         <title>{title}</title>
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2aa5a0"></link>
+        <link rel="mask-icon" href="/apple-touch-icon.png" color="#A3195B"></link>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
